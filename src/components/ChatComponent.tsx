@@ -1,132 +1,135 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState, useEffect, useRef } from "react"
-import ReactMarkdown from "react-markdown"
+import type React from "react";
+import { useState, useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
 
 type Message = {
-  role: "user" | "bot"
-  content: string
-  timestamp: Date
-}
+  role: "user" | "bot";
+  content: string;
+  timestamp: Date;
+};
 
 export default function ChatComponent() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([])
-  const [input, setInput] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
-  const messageContainerRef = useRef<HTMLDivElement>(null)
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messageContainerRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  
   // Scroll al último mensaje cuando se añade uno nuevo
   useEffect(() => {
     if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [messages])
+  }, [messages]);
 
   // Permitir que otros componentes abran el chat
   useEffect(() => {
     const handleChatButtonClick = () => {
-      setIsOpen(true)
-    }
+      setIsOpen(true);
+    };
 
     // Escuchar clics en elementos con ID chat-button
     document.addEventListener("click", (e) => {
-      const target = e.target as HTMLElement
+      const target = e.target as HTMLElement;
       if (target.id === "chat-button" || target.closest("#chat-button")) {
-        handleChatButtonClick()
+        handleChatButtonClick();
       }
-    })
+    });
 
     return () => {
-      document.removeEventListener("click", handleChatButtonClick)
-    }
-  }, [])
+      document.removeEventListener("click", handleChatButtonClick);
+    };
+  }, []);
 
   const toggleChat = () => {
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
     // Si se está cerrando el chat, también resetear el modo expandido
     if (isOpen) {
-      setIsExpanded(false)
+      setIsExpanded(false);
     }
-  }
+  };
 
   const toggleExpand = () => {
-    setIsExpanded(!isExpanded)
-  }
+    setIsExpanded(!isExpanded);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!input.trim()) return
+    e.preventDefault();
+    if (!input.trim()) return;
 
     const userMessage: Message = {
       role: "user",
       content: input,
       timestamp: new Date(),
-    }
+    };
 
-    setMessages((prev) => [...prev, userMessage])
-    setInput("")
-    setIsLoading(true)
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsLoading(true);
 
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chatInput: input }),
-      })
+      });
 
-      const data = await res.json()
+      const data = await res.json();
 
-      if (!data.message) throw new Error("Respuesta inválida de n8n")
+      if (!data.message) throw new Error("Respuesta inválida de n8n");
 
       const botResponse: Message = {
         role: "bot",
         content: data.message,
         timestamp: new Date(),
-      }
+      };
 
-      setMessages((prev) => [...prev, botResponse])
+      setMessages((prev) => [...prev, botResponse]);
     } catch (error) {
-      console.error("Error:", error)
+      console.error("Error:", error);
       setMessages((prev) => [
         ...prev,
         {
           role: "bot",
-          content: "Hubo un error al procesar tu solicitud. Por favor, intenta de nuevo más tarde.",
+          content:
+            "Hubo un error al procesar tu solicitud. Por favor, intenta de nuevo más tarde.",
           timestamp: new Date(),
         },
-      ])
+      ]);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const downloadChat = () => {
     const chatContent = messages
       .map(
-        (msg) => `[${msg.timestamp.toLocaleTimeString()}] ${msg.role === "user" ? "Tú" : "Asistente"}: ${msg.content}`,
+        (msg) =>
+          `[${msg.timestamp.toLocaleTimeString()}] ${
+            msg.role === "user" ? "Tú" : "Asistente"
+          }: ${msg.content}`
       )
-      .join("\n\n")
+      .join("\n\n");
 
-    const blob = new Blob([chatContent], { type: "text/plain" })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement("a")
-    a.href = url
-    a.download = `chat-${new Date().toISOString().slice(0, 10)}.txt`
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
-  }
+    const blob = new Blob([chatContent], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `chat-${new Date().toISOString().slice(0, 10)}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-  }
+    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  };
 
   return (
     <>
@@ -190,16 +193,26 @@ export default function ChatComponent() {
           </div>
 
           {/* Mensajes */}
-          <div ref={messageContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div
+            ref={messageContainerRef}
+            className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50"
+          >
             {messages.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full text-gray-400">
                 <span className="text-4xl mb-2 opacity-20">💬</span>
                 <p>No hay mensajes aún</p>
-                <p className="text-sm">Envía un mensaje para comenzar la conversación</p>
+                <p className="text-sm">
+                  Envía un mensaje para comenzar la conversación
+                </p>
               </div>
             ) : (
               messages.map((message, index) => (
-                <div key={index} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+                <div
+                  key={index}
+                  className={`flex ${
+                    message.role === "user" ? "justify-end" : "justify-start"
+                  }`}
+                >
                   {message.role === "bot" && (
                     <div className="h-8 w-8 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white mr-2 flex-shrink-0">
                       <span className="text-xs">AI</span>
@@ -216,7 +229,9 @@ export default function ChatComponent() {
                       <ReactMarkdown>{message.content}</ReactMarkdown>
                     </div>
                     <span
-                      className={`text-xs mt-1 ${message.role === "user" ? "text-right" : "text-left"} text-gray-500`}
+                      className={`text-xs mt-1 ${
+                        message.role === "user" ? "text-right" : "text-left"
+                      } text-gray-500`}
                     >
                       {formatTime(message.timestamp)}
                     </span>
@@ -249,7 +264,10 @@ export default function ChatComponent() {
           </div>
 
           {/* Input para escribir */}
-          <form onSubmit={handleSubmit} className="p-3 border-t border-gray-200 bg-white">
+          <form
+            onSubmit={handleSubmit}
+            className="p-3 border-t border-gray-200 bg-white"
+          >
             <div className="flex items-center rounded-full border border-gray-300 bg-gray-50 px-3 py-1 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-indigo-500">
               <input
                 type="text"
@@ -279,6 +297,5 @@ export default function ChatComponent() {
         </div>
       </div>
     </>
-  )
+  );
 }
-

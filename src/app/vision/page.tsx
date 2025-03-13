@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 export default function Vision() {
   return (
@@ -26,15 +26,20 @@ export default function Vision() {
               </span>
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-500">
-              Nuestra visión es ser un referente global en el desarrollo de tecnología avanzada, transformando
-              industrias y mejorando la vida de las personas con soluciones inteligentes y accesibles.
+              Nuestra visión es ser un referente global en el desarrollo de
+              tecnología avanzada, transformando industrias y mejorando la vida
+              de las personas con soluciones inteligentes y accesibles.
             </p>
           </div>
         </div>
 
         {/* Decoración de ondas */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+            className="w-full h-auto"
+          >
             <path
               fill="#ffffff"
               fillOpacity="1"
@@ -49,10 +54,14 @@ export default function Vision() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-center lg:justify-between">
             <div className="lg:w-1/2 lg:pr-12">
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Hacia dónde nos dirigimos</h2>
+              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Hacia dónde nos dirigimos
+              </h2>
               <p className="mt-4 text-lg text-gray-600">
-                Visualizamos un futuro donde la tecnología inteligente sea una extensión natural de la vida cotidiana,
-                facilitando tareas, potenciando capacidades y creando nuevas posibilidades para todos.
+                Visualizamos un futuro donde la tecnología inteligente sea una
+                extensión natural de la vida cotidiana, facilitando tareas,
+                potenciando capacidades y creando nuevas posibilidades para
+                todos.
               </p>
               <div className="mt-8 space-y-6">
                 <div className="flex">
@@ -75,10 +84,14 @@ export default function Vision() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Presencia global</h3>
+                    <h3 className="text-lg font-medium text-gray-900">
+                      Presencia global
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Aspiramos a expandir nuestra presencia internacional, llevando nuestras soluciones a todos los
-                      rincones del mundo para generar un impacto positivo en diversas comunidades.
+                      Aspiramos a expandir nuestra presencia internacional,
+                      llevando nuestras soluciones a todos los rincones del
+                      mundo para generar un impacto positivo en diversas
+                      comunidades.
                     </p>
                   </div>
                 </div>
@@ -102,10 +115,14 @@ export default function Vision() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Tecnología inclusiva</h3>
+                    <h3 className="text-lg font-medium text-gray-900">
+                      Tecnología inclusiva
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Queremos que nuestra tecnología sea accesible para personas de todas las edades, habilidades y
-                      contextos socioeconómicos, eliminando barreras y creando oportunidades.
+                      Queremos que nuestra tecnología sea accesible para
+                      personas de todas las edades, habilidades y contextos
+                      socioeconómicos, eliminando barreras y creando
+                      oportunidades.
                     </p>
                   </div>
                 </div>
@@ -129,10 +146,13 @@ export default function Vision() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Innovación disruptiva</h3>
+                    <h3 className="text-lg font-medium text-gray-900">
+                      Innovación disruptiva
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Aspiramos a desarrollar tecnologías que no solo mejoren lo existente, sino que transformen
-                      radicalmente la forma en que vivimos, trabajamos y nos relacionamos.
+                      Aspiramos a desarrollar tecnologías que no solo mejoren lo
+                      existente, sino que transformen radicalmente la forma en
+                      que vivimos, trabajamos y nos relacionamos.
                     </p>
                   </div>
                 </div>
@@ -168,8 +188,12 @@ export default function Vision() {
                   </div>
                   <div className="mt-6">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-600">Progreso hacia nuestra visión</span>
-                      <span className="text-sm font-medium text-indigo-600">65%</span>
+                      <span className="text-sm font-medium text-gray-600">
+                        Progreso hacia nuestra visión
+                      </span>
+                      <span className="text-sm font-medium text-indigo-600">
+                        65%
+                      </span>
                     </div>
                     <div className="h-3 bg-gray-200 rounded-full">
                       <div
@@ -189,19 +213,27 @@ export default function Vision() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Impacto Global</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Impacto Global
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              Aspiramos a expandir nuestra presencia internacional, llevando nuestras soluciones a todos los rincones
-              del mundo para generar un impacto positivo en diversas comunidades.
+              Aspiramos a expandir nuestra presencia internacional, llevando
+              nuestras soluciones a todos los rincones del mundo para generar un
+              impacto positivo en diversas comunidades.
             </p>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+            <div
+              className="absolute inset-0 flex items-center"
+              aria-hidden="true"
+            >
               <div className="w-full border-t border-gray-300"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="px-3 bg-gray-50 text-lg font-medium text-gray-900">Regiones de impacto</span>
+              <span className="px-3 bg-gray-50 text-lg font-medium text-gray-900">
+                Regiones de impacto
+              </span>
             </div>
           </div>
 
@@ -226,8 +258,8 @@ export default function Vision() {
               </div>
               <h3 className="text-lg font-bold text-gray-900">América</h3>
               <p className="mt-2 text-gray-600">
-                Expandiendo nuestra presencia desde Norteamérica hasta Sudamérica, con soluciones adaptadas a las
-                necesidades locales.
+                Expandiendo nuestra presencia desde Norteamérica hasta
+                Sudamérica, con soluciones adaptadas a las necesidades locales.
               </p>
             </div>
 
@@ -251,7 +283,8 @@ export default function Vision() {
               </div>
               <h3 className="text-lg font-bold text-gray-900">Europa</h3>
               <p className="mt-2 text-gray-600">
-                Fortaleciendo alianzas con empresas e instituciones europeas para impulsar la innovación tecnológica.
+                Fortaleciendo alianzas con empresas e instituciones europeas
+                para impulsar la innovación tecnológica.
               </p>
             </div>
 
@@ -275,8 +308,8 @@ export default function Vision() {
               </div>
               <h3 className="text-lg font-bold text-gray-900">Asia-Pacífico</h3>
               <p className="mt-2 text-gray-600">
-                Desarrollando soluciones específicas para los mercados asiáticos en rápido crecimiento y con necesidades
-                únicas.
+                Desarrollando soluciones específicas para los mercados asiáticos
+                en rápido crecimiento y con necesidades únicas.
               </p>
             </div>
 
@@ -300,7 +333,8 @@ export default function Vision() {
               </div>
               <h3 className="text-lg font-bold text-gray-900">África</h3>
               <p className="mt-2 text-gray-600">
-                Creando soluciones accesibles y adaptadas a las necesidades específicas de las comunidades africanas.
+                Creando soluciones accesibles y adaptadas a las necesidades
+                específicas de las comunidades africanas.
               </p>
             </div>
           </div>
@@ -311,7 +345,9 @@ export default function Vision() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Metas a Largo Plazo</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Metas a Largo Plazo
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
               Objetivos ambiciosos que guían nuestro camino hacia el futuro
             </p>
@@ -324,10 +360,13 @@ export default function Vision() {
               <div className="h-16 w-16 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold">1</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Liderazgo en IA</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Liderazgo en IA
+              </h3>
               <p className="mt-4 text-gray-600">
-                Convertirnos en líderes globales en el desarrollo de soluciones de inteligencia artificial que sean
-                éticas, transparentes y centradas en el usuario.
+                Convertirnos en líderes globales en el desarrollo de soluciones
+                de inteligencia artificial que sean éticas, transparentes y
+                centradas en el usuario.
               </p>
             </div>
 
@@ -337,10 +376,13 @@ export default function Vision() {
               <div className="h-16 w-16 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold">2</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Impacto social</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Impacto social
+              </h3>
               <p className="mt-4 text-gray-600">
-                Mejorar la vida de más de 100 millones de personas a través de nuestras soluciones tecnológicas, con un
-                enfoque especial en comunidades desatendidas.
+                Mejorar la vida de más de 100 millones de personas a través de
+                nuestras soluciones tecnológicas, con un enfoque especial en
+                comunidades desatendidas.
               </p>
             </div>
 
@@ -350,10 +392,13 @@ export default function Vision() {
               <div className="h-16 w-16 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold">3</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Sostenibilidad</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Sostenibilidad
+              </h3>
               <p className="mt-4 text-gray-600">
-                Desarrollar tecnologías que no solo sean eficientes, sino que también contribuyan activamente a la
-                sostenibilidad ambiental y la reducción de la huella de carbono.
+                Desarrollar tecnologías que no solo sean eficientes, sino que
+                también contribuyan activamente a la sostenibilidad ambiental y
+                la reducción de la huella de carbono.
               </p>
             </div>
           </div>
@@ -368,17 +413,21 @@ export default function Vision() {
               <div>
                 <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                   <span className="block">Sé parte de nuestro futuro</span>
-                  <span className="block text-indigo-100">Juntos podemos lograr grandes cosas</span>
+                  <span className="block text-indigo-100">
+                    Juntos podemos lograr grandes cosas
+                  </span>
                 </h2>
                 <p className="mt-4 text-lg text-indigo-100">
-                  Descubre cómo nuestras soluciones pueden ayudarte a alcanzar tus objetivos y ser parte de nuestra
-                  visión compartida.
+                  Descubre cómo nuestras soluciones pueden ayudarte a alcanzar
+                  tus objetivos y ser parte de nuestra visión compartida.
                 </p>
               </div>
               <div className="mt-8 lg:mt-0 lg:ml-8">
                 <div className="rounded-md shadow">
                   <button
-                    onClick={() => document.getElementById("chat-button")?.click()}
+                    onClick={() =>
+                      document.getElementById("chat-button")?.click()
+                    }
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-all duration-300 transform hover:scale-105"
                   >
                     Iniciar chat ahora
@@ -401,6 +450,5 @@ export default function Vision() {
       {/* Elemento oculto para identificar el botón del chat */}
       <div id="chat-button" className="hidden"></div>
     </div>
-  )
+  );
 }
-

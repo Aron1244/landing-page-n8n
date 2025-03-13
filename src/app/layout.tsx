@@ -29,11 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         <main className="min-h-screen bg-gray-50 pt-[var(--navbar-height)]">
           {children}
         </main>
-        <ChatComponent/>
+        <ChatComponent />
       </body>
     </html>
   );

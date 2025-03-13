@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 export default function Home() {
   return (
@@ -26,7 +26,8 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500">
-              Obtén respuestas precisas a tus preguntas con nuestro asistente impulsado por inteligencia artificial.
+              Obtén respuestas precisas a tus preguntas con nuestro asistente
+              impulsado por inteligencia artificial.
               <br />
               <br />
               <br />
@@ -35,7 +36,9 @@ export default function Home() {
             <div className="mt-10 flex justify-center">
               <div className="rounded-md shadow">
                 <button
-                  onClick={() => document.getElementById("chat-button")?.click()}
+                  onClick={() =>
+                    document.getElementById("chat-button")?.click()
+                  }
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 md:py-4 md:text-lg md:px-10 transition-all duration-300 transform hover:scale-105"
                 >
                   Iniciar conversación
@@ -55,7 +58,11 @@ export default function Home() {
 
         {/* Decoración de ondas */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+            className="w-full h-auto"
+          >
             <path
               fill="#ffffff"
               fillOpacity="1"
@@ -69,9 +76,12 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Características principales</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Características principales
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              Nuestro asistente virtual está diseñado para hacer tu vida más fácil.
+              Nuestro asistente virtual está diseñado para hacer tu vida más
+              fácil.
             </p>
           </div>
 
@@ -87,12 +97,20 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-medium text-gray-900">Respuestas instantáneas</h3>
+                <h3 className="mt-8 text-lg font-medium text-gray-900">
+                  Respuestas instantáneas
+                </h3>
                 <p className="mt-2 text-base text-gray-500">
-                  Obtén respuestas a tus preguntas en segundos, sin esperas ni búsquedas complicadas.
+                  Obtén respuestas a tus preguntas en segundos, sin esperas ni
+                  búsquedas complicadas.
                 </p>
               </div>
 
@@ -114,9 +132,12 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-medium text-gray-900">Historial de conversaciones</h3>
+                <h3 className="mt-8 text-lg font-medium text-gray-900">
+                  Historial de conversaciones
+                </h3>
                 <p className="mt-2 text-base text-gray-500">
-                  Guarda y descarga tus conversaciones para consultarlas cuando lo necesites.
+                  Guarda y descarga tus conversaciones para consultarlas cuando
+                  lo necesites.
                 </p>
               </div>
 
@@ -144,9 +165,12 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-medium text-gray-900">Personalizable</h3>
+                <h3 className="mt-8 text-lg font-medium text-gray-900">
+                  Personalizable
+                </h3>
                 <p className="mt-2 text-base text-gray-500">
-                  Conecta con n8n para personalizar las respuestas según tus necesidades específicas.
+                  Conecta con n8n para personalizar las respuestas según tus
+                  necesidades específicas.
                 </p>
               </div>
             </div>
@@ -158,7 +182,9 @@ export default function Home() {
       <section id="como-funciona" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Cómo funciona</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Cómo funciona
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
               Usar nuestro asistente virtual es muy sencillo.
             </p>
@@ -178,9 +204,12 @@ export default function Home() {
                         <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
                           <span className="text-xl font-bold">1</span>
                         </div>
-                        <h3 className="text-xl font-medium text-gray-900">Haz clic en el chat</h3>
+                        <h3 className="text-xl font-medium text-gray-900">
+                          Haz clic en el chat
+                        </h3>
                         <p className="mt-2 text-base text-gray-500">
-                          Abre el chat haciendo clic en el botón flotante ubicado en la esquina inferior derecha.
+                          Abre el chat haciendo clic en el botón flotante
+                          ubicado en la esquina inferior derecha.
                         </p>
                       </div>
                     </div>
@@ -203,9 +232,12 @@ export default function Home() {
                         <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
                           <span className="text-xl font-bold">2</span>
                         </div>
-                        <h3 className="text-xl font-medium text-gray-900">Escribe tu pregunta</h3>
+                        <h3 className="text-xl font-medium text-gray-900">
+                          Escribe tu pregunta
+                        </h3>
                         <p className="mt-2 text-base text-gray-500">
-                          Escribe tu pregunta o solicitud en el campo de texto y presiona enviar.
+                          Escribe tu pregunta o solicitud en el campo de texto y
+                          presiona enviar.
                         </p>
                       </div>
                     </div>
@@ -214,8 +246,12 @@ export default function Home() {
                       <div className="bg-white p-4 rounded-lg shadow-md">
                         <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center">
                           <div className="w-3/4 bg-white rounded-full p-2 border border-gray-300 flex">
-                            <div className="flex-1 text-gray-400">Escribe un mensaje...</div>
-                            <div className="bg-indigo-600 rounded-full p-1 text-white">➤</div>
+                            <div className="flex-1 text-gray-400">
+                              Escribe un mensaje...
+                            </div>
+                            <div className="bg-indigo-600 rounded-full p-1 text-white">
+                              ➤
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -231,9 +267,12 @@ export default function Home() {
                         <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
                           <span className="text-xl font-bold">3</span>
                         </div>
-                        <h3 className="text-xl font-medium text-gray-900">Recibe tu respuesta</h3>
+                        <h3 className="text-xl font-medium text-gray-900">
+                          Recibe tu respuesta
+                        </h3>
                         <p className="mt-2 text-base text-gray-500">
-                          Nuestro asistente procesará tu pregunta y te dará una respuesta inmediata.
+                          Nuestro asistente procesará tu pregunta y te dará una
+                          respuesta inmediata.
                         </p>
                       </div>
                     </div>
@@ -246,7 +285,9 @@ export default function Home() {
                               <span className="text-xs">AI</span>
                             </div>
                             <div className="bg-white p-2 rounded-lg shadow-sm">
-                              <p className="text-sm text-gray-800">Aquí está la información que solicitaste...</p>
+                              <p className="text-sm text-gray-800">
+                                Aquí está la información que solicitaste...
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -264,7 +305,9 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Lo que dicen nuestros usuarios</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Lo que dicen nuestros usuarios
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
               Miles de personas ya confían en nuestro asistente virtual.
             </p>
@@ -278,13 +321,16 @@ export default function Home() {
                   <span className="text-lg font-bold">M</span>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-gray-900">María G.</h4>
+                  <h4 className="text-lg font-medium text-gray-900">
+                    María G.
+                  </h4>
                   <p className="text-gray-500">Empresaria</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "Este asistente virtual ha revolucionado la forma en que atendemos a nuestros clientes. Las respuestas
-                son rápidas y precisas."
+                "Este asistente virtual ha revolucionado la forma en que
+                atendemos a nuestros clientes. Las respuestas son rápidas y
+                precisas."
               </p>
               <div className="mt-4 flex text-yellow-400">
                 <span>★</span>
@@ -307,8 +353,9 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "La integración con n8n fue muy sencilla. Ahora tenemos un asistente personalizado que responde
-                exactamente lo que necesitamos."
+                "La integración con n8n fue muy sencilla. Ahora tenemos un
+                asistente personalizado que responde exactamente lo que
+                necesitamos."
               </p>
               <div className="mt-4 flex text-yellow-400">
                 <span>★</span>
@@ -326,13 +373,15 @@ export default function Home() {
                   <span className="text-lg font-bold">L</span>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-gray-900">Laura S.</h4>
+                  <h4 className="text-lg font-medium text-gray-900">
+                    Laura S.
+                  </h4>
                   <p className="text-gray-500">Estudiante</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "Me ayuda a resolver dudas rápidamente. Es como tener un tutor disponible 24/7 que siempre tiene la
-                respuesta correcta."
+                "Me ayuda a resolver dudas rápidamente. Es como tener un tutor
+                disponible 24/7 que siempre tiene la respuesta correcta."
               </p>
               <div className="mt-4 flex text-yellow-400">
                 <span>★</span>
@@ -352,8 +401,18 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 0 10 L 40 10 M 10 0 L 10 40" stroke="white" strokeWidth="1" fill="none" />
+              <pattern
+                id="grid"
+                width="40"
+                height="40"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 0 10 L 40 10 M 10 0 L 10 40"
+                  stroke="white"
+                  strokeWidth="1"
+                  fill="none"
+                />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
@@ -362,9 +421,12 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">¿Listo para comenzar?</h2>
+            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+              ¿Listo para comenzar?
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-indigo-100">
-              Prueba nuestro asistente virtual ahora y descubre cómo puede ayudarte.
+              Prueba nuestro asistente virtual ahora y descubre cómo puede
+              ayudarte.
             </p>
             <div className="mt-8">
               <button
@@ -381,6 +443,5 @@ export default function Home() {
       {/* Elemento oculto para identificar el botón del chat */}
       <div id="chat-button" className="hidden"></div>
     </div>
-  )
+  );
 }
-

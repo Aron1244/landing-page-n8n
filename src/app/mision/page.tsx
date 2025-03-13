@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 export default function Mision() {
   return (
@@ -26,15 +26,21 @@ export default function Mision() {
               </span>
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-500">
-              Nuestra misión es proporcionar soluciones tecnológicas innovadoras que mejoren la calidad de vida de
-              nuestros usuarios, ayudándoles a superar desafíos con productos fáciles de usar y de alto rendimiento.
+              Nuestra misión es proporcionar soluciones tecnológicas innovadoras
+              que mejoren la calidad de vida de nuestros usuarios, ayudándoles a
+              superar desafíos con productos fáciles de usar y de alto
+              rendimiento.
             </p>
           </div>
         </div>
 
         {/* Decoración de ondas */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+            className="w-full h-auto"
+          >
             <path
               fill="#ffffff"
               fillOpacity="1"
@@ -48,9 +54,12 @@ export default function Mision() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Pilares de Nuestra Misión</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Pilares de Nuestra Misión
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              Estos son los principios fundamentales que guían nuestro trabajo diario
+              Estos son los principios fundamentales que guían nuestro trabajo
+              diario
             </p>
           </div>
 
@@ -74,10 +83,13 @@ export default function Mision() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Innovación Constante</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Innovación Constante
+              </h3>
               <p className="mt-4 text-gray-600">
-                Nos comprometemos a estar a la vanguardia de la tecnología, investigando y desarrollando soluciones que
-                anticipen las necesidades futuras de nuestros usuarios.
+                Nos comprometemos a estar a la vanguardia de la tecnología,
+                investigando y desarrollando soluciones que anticipen las
+                necesidades futuras de nuestros usuarios.
               </p>
             </div>
 
@@ -102,8 +114,9 @@ export default function Mision() {
               </div>
               <h3 className="text-xl font-bold text-gray-900">Accesibilidad</h3>
               <p className="mt-4 text-gray-600">
-                Creemos que la tecnología debe ser accesible para todos. Trabajamos para crear soluciones que sean
-                fáciles de usar y asequibles para una amplia gama de usuarios.
+                Creemos que la tecnología debe ser accesible para todos.
+                Trabajamos para crear soluciones que sean fáciles de usar y
+                asequibles para una amplia gama de usuarios.
               </p>
             </div>
 
@@ -126,10 +139,13 @@ export default function Mision() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Impacto Social</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Impacto Social
+              </h3>
               <p className="mt-4 text-gray-600">
-                Buscamos generar un impacto positivo en la sociedad, desarrollando soluciones que aborden problemas
-                reales y mejoren la calidad de vida de las personas.
+                Buscamos generar un impacto positivo en la sociedad,
+                desarrollando soluciones que aborden problemas reales y mejoren
+                la calidad de vida de las personas.
               </p>
             </div>
           </div>
@@ -141,10 +157,13 @@ export default function Mision() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-center lg:justify-between">
             <div className="lg:w-1/2 lg:pr-12">
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Compromiso con la Innovación</h2>
+              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Compromiso con la Innovación
+              </h2>
               <p className="mt-4 text-lg text-gray-600">
-                Buscamos siempre innovar y ofrecer productos que se adapten a las necesidades cambiantes del mercado,
-                garantizando así el éxito de nuestros clientes.
+                Buscamos siempre innovar y ofrecer productos que se adapten a
+                las necesidades cambiantes del mercado, garantizando así el
+                éxito de nuestros clientes.
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex items-start">
@@ -157,15 +176,22 @@ export default function Mision() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Investigación continua</h3>
+                    <h3 className="text-lg font-medium text-gray-900">
+                      Investigación continua
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Invertimos en investigación y desarrollo para mantenernos a la vanguardia de las tendencias
-                      tecnológicas.
+                      Invertimos en investigación y desarrollo para mantenernos
+                      a la vanguardia de las tendencias tecnológicas.
                     </p>
                   </div>
                 </div>
@@ -179,15 +205,23 @@ export default function Mision() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Mejora continua</h3>
+                    <h3 className="text-lg font-medium text-gray-900">
+                      Mejora continua
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Iteramos constantemente nuestros productos basándonos en la retroalimentación de los usuarios y
-                      las nuevas posibilidades tecnológicas.
+                      Iteramos constantemente nuestros productos basándonos en
+                      la retroalimentación de los usuarios y las nuevas
+                      posibilidades tecnológicas.
                     </p>
                   </div>
                 </div>
@@ -201,15 +235,23 @@ export default function Mision() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-900">Colaboración</h3>
+                    <h3 className="text-lg font-medium text-gray-900">
+                      Colaboración
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Trabajamos en estrecha colaboración con nuestros clientes y socios para desarrollar soluciones que
-                      realmente satisfagan sus necesidades.
+                      Trabajamos en estrecha colaboración con nuestros clientes
+                      y socios para desarrollar soluciones que realmente
+                      satisfagan sus necesidades.
                     </p>
                   </div>
                 </div>
@@ -268,7 +310,9 @@ export default function Mision() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Objetivos</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Nuestros Objetivos
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
               Metas claras que nos impulsan a seguir adelante
             </p>
@@ -277,37 +321,48 @@ export default function Mision() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Objetivo 1 */}
             <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border-l-4 border-indigo-600">
-              <h3 className="text-xl font-bold text-gray-900">Transformar la experiencia del usuario</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Transformar la experiencia del usuario
+              </h3>
               <p className="mt-2 text-gray-600">
-                Queremos redefinir la forma en que las personas interactúan con la tecnología, haciendo que sea más
-                intuitiva, eficiente y agradable.
+                Queremos redefinir la forma en que las personas interactúan con
+                la tecnología, haciendo que sea más intuitiva, eficiente y
+                agradable.
               </p>
             </div>
 
             {/* Objetivo 2 */}
             <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border-l-4 border-purple-600">
-              <h3 className="text-xl font-bold text-gray-900">Democratizar el acceso a la tecnología</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Democratizar el acceso a la tecnología
+              </h3>
               <p className="mt-2 text-gray-600">
-                Trabajamos para que nuestras soluciones sean accesibles para todos, independientemente de su ubicación,
-                recursos o conocimientos técnicos.
+                Trabajamos para que nuestras soluciones sean accesibles para
+                todos, independientemente de su ubicación, recursos o
+                conocimientos técnicos.
               </p>
             </div>
 
             {/* Objetivo 3 */}
             <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border-l-4 border-indigo-600">
-              <h3 className="text-xl font-bold text-gray-900">Impulsar la eficiencia empresarial</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Impulsar la eficiencia empresarial
+              </h3>
               <p className="mt-2 text-gray-600">
-                Desarrollamos herramientas que ayudan a las empresas a optimizar sus procesos, reducir costos y aumentar
-                su productividad.
+                Desarrollamos herramientas que ayudan a las empresas a optimizar
+                sus procesos, reducir costos y aumentar su productividad.
               </p>
             </div>
 
             {/* Objetivo 4 */}
             <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border-l-4 border-purple-600">
-              <h3 className="text-xl font-bold text-gray-900">Fomentar la sostenibilidad</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Fomentar la sostenibilidad
+              </h3>
               <p className="mt-2 text-gray-600">
-                Nos comprometemos a desarrollar soluciones que no solo sean eficientes, sino también sostenibles y
-                respetuosas con el medio ambiente.
+                Nos comprometemos a desarrollar soluciones que no solo sean
+                eficientes, sino también sostenibles y respetuosas con el medio
+                ambiente.
               </p>
             </div>
           </div>
@@ -321,18 +376,25 @@ export default function Mision() {
             <div className="px-6 py-12 sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between">
               <div>
                 <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                  <span className="block">¿Quieres ser parte de nuestra misión?</span>
-                  <span className="block text-indigo-100">Descubre cómo podemos ayudarte.</span>
+                  <span className="block">
+                    ¿Quieres ser parte de nuestra misión?
+                  </span>
+                  <span className="block text-indigo-100">
+                    Descubre cómo podemos ayudarte.
+                  </span>
                 </h2>
                 <p className="mt-4 text-lg text-indigo-100">
-                  Nuestro asistente virtual está listo para responder tus preguntas y mostrarte cómo nuestras soluciones
-                  pueden beneficiarte.
+                  Nuestro asistente virtual está listo para responder tus
+                  preguntas y mostrarte cómo nuestras soluciones pueden
+                  beneficiarte.
                 </p>
               </div>
               <div className="mt-8 lg:mt-0 lg:ml-8">
                 <div className="rounded-md shadow">
                   <button
-                    onClick={() => document.getElementById("chat-button")?.click()}
+                    onClick={() =>
+                      document.getElementById("chat-button")?.click()
+                    }
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-all duration-300 transform hover:scale-105"
                   >
                     Iniciar chat ahora
@@ -355,6 +417,5 @@ export default function Mision() {
       {/* Elemento oculto para identificar el botón del chat */}
       <div id="chat-button" className="hidden"></div>
     </div>
-  )
+  );
 }
-

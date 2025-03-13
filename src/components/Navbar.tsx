@@ -1,45 +1,50 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const navbarRef = useRef<HTMLElement | null>(null)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const navbarRef = useRef<HTMLElement | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const updateNavbarHeight = () => {
       if (navbarRef.current) {
-        document.documentElement.style.setProperty("--navbar-height", `${navbarRef.current.offsetHeight}px`)
+        document.documentElement.style.setProperty(
+          "--navbar-height",
+          `${navbarRef.current.offsetHeight}px`
+        );
       }
-    }
+    };
 
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    updateNavbarHeight()
-    window.addEventListener("resize", updateNavbarHeight)
-    window.addEventListener("scroll", handleScroll)
+    updateNavbarHeight();
+    window.addEventListener("resize", updateNavbarHeight);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("resize", updateNavbarHeight)
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      window.removeEventListener("resize", updateNavbarHeight);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <nav
       ref={navbarRef}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-sm shadow-md py-2" : "bg-white py-4"
+        scrolled
+          ? "bg-white/95 backdrop-blur-sm shadow-md py-2"
+          : "bg-white py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +66,13 @@ export default function Navbar() {
                 strokeLinejoin="round"
               >
                 <defs>
-                  <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="logo-gradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#4F46E5" />
                     <stop offset="100%" stopColor="#9333EA" />
                   </linearGradient>
@@ -125,10 +136,16 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
     <Link
       href={href}
@@ -136,10 +153,16 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
     >
       {children}
     </Link>
-  )
+  );
 }
 
-function MobileNavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function MobileNavLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
     <Link
       href={href}
@@ -147,6 +170,5 @@ function MobileNavLink({ href, children }: { href: string; children: React.React
     >
       {children}
     </Link>
-  )
+  );
 }
-

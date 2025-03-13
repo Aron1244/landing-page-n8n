@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 export default function About() {
   return (
@@ -26,8 +26,9 @@ export default function About() {
               </span>
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-500">
-              Somos una empresa comprometida con la innovación y el desarrollo de soluciones inteligentes. Nuestro
-              objetivo es mejorar la experiencia de los usuarios mediante tecnología avanzada.
+              Somos una empresa comprometida con la innovación y el desarrollo
+              de soluciones inteligentes. Nuestro objetivo es mejorar la
+              experiencia de los usuarios mediante tecnología avanzada.
             </p>
           </div>
         </div>
@@ -37,7 +38,9 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestra Historia</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Nuestra Historia
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
               Un viaje de innovación y crecimiento constante
             </p>
@@ -56,10 +59,13 @@ export default function About() {
                     <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2">
                       2018
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Nuestros inicios</h3>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      Nuestros inicios
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Comenzamos como un pequeño equipo con grandes ideas y la visión de transformar la forma en que las
-                      personas interactúan con la tecnología.
+                      Comenzamos como un pequeño equipo con grandes ideas y la
+                      visión de transformar la forma en que las personas
+                      interactúan con la tecnología.
                     </p>
                   </div>
                   <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
@@ -93,10 +99,13 @@ export default function About() {
                     <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2">
                       2020
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Expansión y crecimiento</h3>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      Expansión y crecimiento
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Ampliamos nuestro equipo y comenzamos a desarrollar soluciones más avanzadas, incorporando
-                      inteligencia artificial y aprendizaje automático.
+                      Ampliamos nuestro equipo y comenzamos a desarrollar
+                      soluciones más avanzadas, incorporando inteligencia
+                      artificial y aprendizaje automático.
                     </p>
                   </div>
                   <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
@@ -130,10 +139,13 @@ export default function About() {
                     <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2">
                       2022
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Lanzamiento de nuestro asistente virtual</h3>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      Lanzamiento de nuestro asistente virtual
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Desarrollamos y lanzamos nuestro asistente virtual, una solución innovadora que ha transformado la
-                      forma en que nuestros clientes interactúan con la tecnología.
+                      Desarrollamos y lanzamos nuestro asistente virtual, una
+                      solución innovadora que ha transformado la forma en que
+                      nuestros clientes interactúan con la tecnología.
                     </p>
                   </div>
                   <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
@@ -167,10 +179,13 @@ export default function About() {
                     <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2">
                       Hoy
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Innovación continua</h3>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      Innovación continua
+                    </h3>
                     <p className="mt-2 text-gray-600">
-                      Seguimos innovando y mejorando nuestras soluciones, con un enfoque en la personalización y la
-                      experiencia del usuario.
+                      Seguimos innovando y mejorando nuestras soluciones, con un
+                      enfoque en la personalización y la experiencia del
+                      usuario.
                     </p>
                   </div>
                   <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
@@ -205,7 +220,9 @@ export default function About() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestro Equipo</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Nuestro Equipo
+            </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
               Personas apasionadas por la innovación y la tecnología
             </p>
@@ -220,16 +237,22 @@ export default function About() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900">Ana Rodríguez</h3>
+                <h3 className="text-xl font-bold text-gray-900">
+                  Ana Rodríguez
+                </h3>
                 <p className="text-indigo-600 font-medium">CEO & Fundadora</p>
                 <p className="mt-3 text-gray-600">
-                  Con más de 15 años de experiencia en el sector tecnológico, Ana lidera nuestra empresa con visión y
-                  pasión.
+                  Con más de 15 años de experiencia en el sector tecnológico,
+                  Ana lidera nuestra empresa con visión y pasión.
                 </p>
                 <div className="mt-4 flex space-x-3">
                   <a href="#" className="text-gray-400 hover:text-indigo-600">
                     <span className="sr-only">LinkedIn</span>
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
@@ -239,7 +262,11 @@ export default function About() {
                   </a>
                   <a href="#" className="text-gray-400 hover:text-indigo-600">
                     <span className="sr-only">Twitter</span>
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
                     </svg>
                   </a>
@@ -255,16 +282,22 @@ export default function About() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900">Javier López</h3>
+                <h3 className="text-xl font-bold text-gray-900">
+                  Javier López
+                </h3>
                 <p className="text-indigo-600 font-medium">CTO</p>
                 <p className="mt-3 text-gray-600">
-                  Experto en inteligencia artificial y aprendizaje automático, Javier lidera nuestro equipo de
-                  desarrollo tecnológico.
+                  Experto en inteligencia artificial y aprendizaje automático,
+                  Javier lidera nuestro equipo de desarrollo tecnológico.
                 </p>
                 <div className="mt-4 flex space-x-3">
                   <a href="#" className="text-gray-400 hover:text-indigo-600">
                     <span className="sr-only">LinkedIn</span>
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
@@ -274,7 +307,11 @@ export default function About() {
                   </a>
                   <a href="#" className="text-gray-400 hover:text-indigo-600">
                     <span className="sr-only">GitHub</span>
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
@@ -294,16 +331,25 @@ export default function About() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900">María González</h3>
-                <p className="text-indigo-600 font-medium">Directora de Producto</p>
+                <h3 className="text-xl font-bold text-gray-900">
+                  María González
+                </h3>
+                <p className="text-indigo-600 font-medium">
+                  Directora de Producto
+                </p>
                 <p className="mt-3 text-gray-600">
-                  Con un enfoque centrado en el usuario, María asegura que nuestros productos sean intuitivos y
-                  resuelvan problemas reales.
+                  Con un enfoque centrado en el usuario, María asegura que
+                  nuestros productos sean intuitivos y resuelvan problemas
+                  reales.
                 </p>
                 <div className="mt-4 flex space-x-3">
                   <a href="#" className="text-gray-400 hover:text-indigo-600">
                     <span className="sr-only">LinkedIn</span>
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
@@ -313,7 +359,11 @@ export default function About() {
                   </a>
                   <a href="#" className="text-gray-400 hover:text-indigo-600">
                     <span className="sr-only">Twitter</span>
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
                     </svg>
                   </a>
@@ -328,8 +378,12 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Valores</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">Principios que guían nuestro trabajo diario</p>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Nuestros Valores
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Principios que guían nuestro trabajo diario
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -353,8 +407,9 @@ export default function About() {
               </div>
               <h3 className="text-lg font-medium text-gray-900">Integridad</h3>
               <p className="mt-2 text-gray-600">
-                Actuamos con honestidad y transparencia en todo lo que hacemos, construyendo relaciones de confianza con
-                nuestros clientes y colaboradores.
+                Actuamos con honestidad y transparencia en todo lo que hacemos,
+                construyendo relaciones de confianza con nuestros clientes y
+                colaboradores.
               </p>
             </div>
 
@@ -368,13 +423,18 @@ export default function About() {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
                 </svg>
               </div>
               <h3 className="text-lg font-medium text-gray-900">Innovación</h3>
               <p className="mt-2 text-gray-600">
-                Buscamos constantemente nuevas formas de mejorar y crear soluciones que marquen la diferencia en la vida
-                de las personas.
+                Buscamos constantemente nuevas formas de mejorar y crear
+                soluciones que marquen la diferencia en la vida de las personas.
               </p>
             </div>
 
@@ -396,10 +456,12 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-gray-900">Colaboración</h3>
+              <h3 className="text-lg font-medium text-gray-900">
+                Colaboración
+              </h3>
               <p className="mt-2 text-gray-600">
-                Creemos en el poder del trabajo en equipo y la diversidad de perspectivas para crear soluciones más
-                completas y efectivas.
+                Creemos en el poder del trabajo en equipo y la diversidad de
+                perspectivas para crear soluciones más completas y efectivas.
               </p>
             </div>
 
@@ -423,8 +485,9 @@ export default function About() {
               </div>
               <h3 className="text-lg font-medium text-gray-900">Excelencia</h3>
               <p className="mt-2 text-gray-600">
-                Nos esforzamos por alcanzar los más altos estándares en todo lo que hacemos, desde el desarrollo de
-                productos hasta el servicio al cliente.
+                Nos esforzamos por alcanzar los más altos estándares en todo lo
+                que hacemos, desde el desarrollo de productos hasta el servicio
+                al cliente.
               </p>
             </div>
           </div>
@@ -435,7 +498,9 @@ export default function About() {
       <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold sm:text-4xl">Nuestro impacto en números</h2>
+            <h2 className="text-3xl font-extrabold sm:text-4xl">
+              Nuestro impacto en números
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -470,8 +535,12 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">¿Por qué elegirnos?</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">Razones para confiar en nuestras soluciones</p>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              ¿Por qué elegirnos?
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Razones para confiar en nuestras soluciones
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -486,15 +555,22 @@ export default function About() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 </div>
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Tecnología de vanguardia</h3>
+                <h3 className="text-lg font-medium text-gray-900">
+                  Tecnología de vanguardia
+                </h3>
                 <p className="mt-2 text-gray-600">
-                  Utilizamos las últimas tecnologías y metodologías para desarrollar soluciones innovadoras y
-                  eficientes.
+                  Utilizamos las últimas tecnologías y metodologías para
+                  desarrollar soluciones innovadoras y eficientes.
                 </p>
               </div>
             </div>
@@ -520,10 +596,12 @@ export default function About() {
                 </div>
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Respuesta rápida</h3>
+                <h3 className="text-lg font-medium text-gray-900">
+                  Respuesta rápida
+                </h3>
                 <p className="mt-2 text-gray-600">
-                  Nuestro asistente virtual proporciona respuestas inmediatas, ahorrando tiempo y mejorando la
-                  eficiencia.
+                  Nuestro asistente virtual proporciona respuestas inmediatas,
+                  ahorrando tiempo y mejorando la eficiencia.
                 </p>
               </div>
             </div>
@@ -549,10 +627,12 @@ export default function About() {
                 </div>
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Personalización</h3>
+                <h3 className="text-lg font-medium text-gray-900">
+                  Personalización
+                </h3>
                 <p className="mt-2 text-gray-600">
-                  Adaptamos nuestras soluciones a las necesidades específicas de cada cliente, garantizando resultados
-                  óptimos.
+                  Adaptamos nuestras soluciones a las necesidades específicas de
+                  cada cliente, garantizando resultados óptimos.
                 </p>
               </div>
             </div>
@@ -578,10 +658,13 @@ export default function About() {
                 </div>
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Seguridad garantizada</h3>
+                <h3 className="text-lg font-medium text-gray-900">
+                  Seguridad garantizada
+                </h3>
                 <p className="mt-2 text-gray-600">
-                  La seguridad de los datos es nuestra prioridad. Implementamos las mejores prácticas para proteger la
-                  información de nuestros clientes.
+                  La seguridad de los datos es nuestra prioridad. Implementamos
+                  las mejores prácticas para proteger la información de nuestros
+                  clientes.
                 </p>
               </div>
             </div>
@@ -597,17 +680,21 @@ export default function About() {
               <div>
                 <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                   <span className="block">¿Listo para comenzar?</span>
-                  <span className="block text-indigo-100">Prueba nuestro asistente virtual hoy.</span>
+                  <span className="block text-indigo-100">
+                    Prueba nuestro asistente virtual hoy.
+                  </span>
                 </h2>
                 <p className="mt-4 text-lg text-indigo-100">
-                  Descubre cómo nuestras soluciones pueden ayudarte a mejorar la eficiencia y la experiencia de tus
-                  usuarios.
+                  Descubre cómo nuestras soluciones pueden ayudarte a mejorar la
+                  eficiencia y la experiencia de tus usuarios.
                 </p>
               </div>
               <div className="mt-8 lg:mt-0 lg:ml-8">
                 <div className="rounded-md shadow">
                   <button
-                    onClick={() => document.getElementById("chat-button")?.click()}
+                    onClick={() =>
+                      document.getElementById("chat-button")?.click()
+                    }
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-all duration-300 transform hover:scale-105"
                   >
                     Iniciar chat ahora
@@ -630,6 +717,5 @@ export default function About() {
       {/* Elemento oculto para identificar el botón del chat */}
       <div id="chat-button" className="hidden"></div>
     </div>
-  )
+  );
 }
-
