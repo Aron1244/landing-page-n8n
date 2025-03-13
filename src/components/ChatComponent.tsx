@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, useRef } from "react"
+import ReactMarkdown from "react-markdown"
 
 type Message = {
   role: "user" | "bot"
@@ -18,26 +18,34 @@ export default function ChatComponent() {
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const messageContainerRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
-  // Añadir mensaje de bienvenida cuando se abre el chat por primera vez
-  useEffect(() => {
-    if (isOpen && messages.length === 0) {
-      setMessages([
-        {
-          role: "bot",
-          content: "¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?",
-          timestamp: new Date(),
-        },
-      ])
-    }
-  }, [isOpen, messages.length])
-
+  
   // Scroll al último mensaje cuando se añade uno nuevo
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
     }
   }, [messages])
+
+  // Permitir que otros componentes abran el chat
+  useEffect(() => {
+    const handleChatButtonClick = () => {
+      setIsOpen(true)
+    }
+
+    // Escuchar clics en elementos con ID chat-button
+    document.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement
+      if (target.id === "chat-button" || target.closest("#chat-button")) {
+        handleChatButtonClick()
+      }
+    })
+
+    return () => {
+      document.removeEventListener("click", handleChatButtonClick)
+    }
+  }, [])
 
   const toggleChat = () => {
     setIsOpen(!isOpen)
@@ -66,23 +74,19 @@ export default function ChatComponent() {
     setIsLoading(true)
 
     try {
-      // Simulamos la llamada a la API para este ejemplo
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-
-      // En un caso real, descomentar esto:
-      /*
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chatInput: input }),
       })
-      const data = await res.json()
-      */
 
-      // Respuesta simulada
+      const data = await res.json()
+
+      if (!data.message) throw new Error("Respuesta inválida de n8n")
+
       const botResponse: Message = {
         role: "bot",
-        content: "Esta es una respuesta de ejemplo. En un entorno real, esto vendría de tu API conectada a n8n.",
+        content: data.message,
         timestamp: new Date(),
       }
 
@@ -128,6 +132,7 @@ export default function ChatComponent() {
     <>
       {/* Botón flotante para abrir el chat */}
       <button
+        ref={buttonRef}
         onClick={toggleChat}
         className="fixed bottom-6 right-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 z-50 flex items-center justify-center"
         aria-label="Abrir chat"
@@ -151,10 +156,12 @@ export default function ChatComponent() {
         className={`fixed z-40 transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         } ${
-          isExpanded ? "bottom-0 right-0 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 h-screen" : "bottom-20 right-6 w-80 sm:w-96"
+          isExpanded
+            ? "bottom-0 right-0 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 h-screen"
+            : "bottom-20 right-6 w-[90%] max-w-[420px] sm:w-[420px]"
         }`}
       >
-        <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col h-full max-h-[600px] border border-gray-200">
+        <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col h-full max-h-[80vh] sm:max-h-[600px] border border-gray-200">
           {/* Encabezado del Chat */}
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 flex justify-between items-center">
             <div className="flex items-center space-x-2">
@@ -168,6 +175,7 @@ export default function ChatComponent() {
                 onClick={downloadChat}
                 className="text-white hover:bg-white/20 p-1.5 rounded-full transition-colors"
                 aria-label="Descargar conversación"
+                disabled={messages.length === 0}
               >
                 <span className="text-sm">📥</span>
               </button>
@@ -205,7 +213,7 @@ export default function ChatComponent() {
                           : "bg-white border border-gray-200 text-gray-800 rounded-tl-none shadow-sm"
                       }`}
                     >
-                      {message.content}
+                      <ReactMarkdown>{message.content}</ReactMarkdown>
                     </div>
                     <span
                       className={`text-xs mt-1 ${message.role === "user" ? "text-right" : "text-left"} text-gray-500`}
