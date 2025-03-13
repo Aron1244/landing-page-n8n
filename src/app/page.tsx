@@ -1,222 +1,382 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
-
 export default function Home() {
-  const [messages, setMessages] = useState<{ role: "user" | "bot"; content: string }[]>([
-  ])
-  const [input, setInput] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-    if (!input.trim()) return
-
-    // Add user message to chat
-    const userMessage = { role: "user" as const, content: input }
-    setMessages((prev) => [...prev, userMessage])
-    setInput("")
-    setIsLoading(true)
-
-    try {
-      // Hacer la solicitud POST a la API de Next.js
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ chatInput: input }),
-      })
-
-      const data = await res.json()
-
-      // Aquí agregamos la respuesta del chatbot
-      setMessages((prev) => [
-        ...prev,
-        { role: "bot", content: data.message ?? "Lo siento, no pude obtener una respuesta válida." },
-      ])
-    } catch (error) {
-      console.error("Error:", error)
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "bot",
-          content: "Lo siento, hubo un error al procesar tu solicitud.",
-        },
-      ])
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
   return (
-    <main className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">ChatBot</h1>
+    <div className="bg-gray-50">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        {/* Fondo con gradiente y patrón */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50">
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%236366F1' fillOpacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+              backgroundSize: "60px 60px",
+            }}
+          ></div>
         </div>
-      </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Hero Section */}
-          <section className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
-              Bienvenido a nuestro Asistente Virtual
-            </h2>
-            <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">
-              Obtén respuestas instantáneas a tus preguntas con nuestro asistente inteligente.
+        <div className="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8 relative">
+          <div className="text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              <span className="block">Asistente Virtual Inteligente</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mt-2">
+                Respuestas al instante
+              </span>
+            </h1>
+            <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500">
+              Obtén respuestas precisas a tus preguntas con nuestro asistente impulsado por inteligencia artificial.
             </p>
-            <div className="mt-10">
-              <a
-                href="#chat"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                Comenzar a chatear
-              </a>
-            </div>
-          </section>
-
-          {/* Features */}
-          <section className="mb-16">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="bg-white overflow-hidden shadow rounded-lg">
-                <div className="px-4 py-5 sm:p-6">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900">Respuestas Rápidas</h3>
-                  <p className="mt-2 text-sm text-gray-500">
-                    Obtén respuestas instantáneas a tus preguntas sin esperas.
-                  </p>
-                </div>
+            <div className="mt-10 flex justify-center">
+              <div className="rounded-md shadow">
+                <button
+                  onClick={() => document.getElementById("chat-button")?.click()}
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 md:py-4 md:text-lg md:px-10 transition-all duration-300 transform hover:scale-105"
+                >
+                  Iniciar conversación
+                </button>
               </div>
-
-              <div className="bg-white overflow-hidden shadow rounded-lg">
-                <div className="px-4 py-5 sm:p-6">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900">Personalizable</h3>
-                  <p className="mt-2 text-sm text-gray-500">
-                    Conecta con n8n para personalizar las respuestas según tus necesidades.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white overflow-hidden shadow rounded-lg">
-                <div className="px-4 py-5 sm:p-6">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900">Seguro</h3>
-                  <p className="mt-2 text-sm text-gray-500">Tus conversaciones están seguras y protegidas.</p>
-                </div>
+              <div className="ml-3 rounded-md shadow">
+                <a
+                  href="#como-funciona"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+                >
+                  Cómo funciona
+                </a>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
 
-          {/* Chat Interface */}
-          <section id="chat" className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <div className="border-b border-gray-200 px-4 py-4 sm:px-6">
-              <h2 className="text-lg font-medium text-gray-900">Chat con nuestro Asistente</h2>
-            </div>
-            <div className="h-96 overflow-y-auto p-4 space-y-4 bg-gray-50">
-              {messages.map((message, index) => (
-                <div key={index} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
-                  <div
-                    className={`max-w-[80%] rounded-lg px-4 py-2 ${
-                      message.role === "user" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-800 shadow-sm"
-                    }`}
+        {/* Decoración de ondas */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
+            <path
+              fill="#ffffff"
+              fillOpacity="1"
+              d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      {/* Características */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Características principales</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Nuestro asistente virtual está diseñado para hacer tu vida más fácil.
+            </p>
+          </div>
+
+          <div className="mt-16">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {/* Característica 1 */}
+              <div className="relative p-6 bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="absolute -top-4 -left-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-3 text-white shadow-md">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    {message.content}
-                  </div>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
-              ))}
-              {isLoading && (
-                <div className="flex justify-start">
-                  <div className="max-w-[80%] rounded-lg px-4 py-2 bg-gray-200 text-gray-800 shadow-sm">
-                    <div className="flex space-x-2">
-                      <div className="w-2 h-2 rounded-full bg-indigo-600 animate-bounce" />
-                      <div className="w-2 h-2 rounded-full bg-indigo-600 animate-bounce [animation-delay:0.2s]" />
-                      <div className="w-2 h-2 rounded-full bg-indigo-600 animate-bounce [animation-delay:0.4s]" />
+                <h3 className="mt-8 text-lg font-medium text-gray-900">Respuestas instantáneas</h3>
+                <p className="mt-2 text-base text-gray-500">
+                  Obtén respuestas a tus preguntas en segundos, sin esperas ni búsquedas complicadas.
+                </p>
+              </div>
+
+              {/* Característica 2 */}
+              <div className="relative p-6 bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="absolute -top-4 -left-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-3 text-white shadow-md">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                    />
+                  </svg>
+                </div>
+                <h3 className="mt-8 text-lg font-medium text-gray-900">Historial de conversaciones</h3>
+                <p className="mt-2 text-base text-gray-500">
+                  Guarda y descarga tus conversaciones para consultarlas cuando lo necesites.
+                </p>
+              </div>
+
+              {/* Característica 3 */}
+              <div className="relative p-6 bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="absolute -top-4 -left-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-3 text-white shadow-md">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="mt-8 text-lg font-medium text-gray-900">Personalizable</h3>
+                <p className="mt-2 text-base text-gray-500">
+                  Conecta con n8n para personalizar las respuestas según tus necesidades específicas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cómo funciona */}
+      <section id="como-funciona" className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Cómo funciona</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Usar nuestro asistente virtual es muy sencillo.
+            </p>
+          </div>
+
+          <div className="mt-16">
+            <div className="relative">
+              {/* Línea de conexión */}
+              <div className="hidden md:block absolute top-0 left-1/2 w-0.5 h-full bg-gradient-to-b from-indigo-600 to-purple-600 transform -translate-x-1/2"></div>
+
+              <div className="space-y-16">
+                {/* Paso 1 */}
+                <div className="relative">
+                  <div className="md:flex items-center">
+                    <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                      <div className="md:float-right text-right">
+                        <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
+                          <span className="text-xl font-bold">1</span>
+                        </div>
+                        <h3 className="text-xl font-medium text-gray-900">Haz clic en el chat</h3>
+                        <p className="mt-2 text-base text-gray-500">
+                          Abre el chat haciendo clic en el botón flotante ubicado en la esquina inferior derecha.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2"></div>
+                    <div className="md:w-1/2 md:pl-8">
+                      <div className="bg-white p-4 rounded-lg shadow-md">
+                        <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center">
+                          <span className="text-4xl">💬</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              )}
-            </div>
-            <div className="border-t border-gray-200 px-4 py-4 sm:px-6">
-              <form onSubmit={handleSubmit} className="flex space-x-3">
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Escribe tu mensaje..."
-                  className="flex-1 min-w-0 block w-full px-3 py-2 rounded-md border border-gray-400 bg-white text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  disabled={isLoading}
-                />
-                <button
-                  type="submit"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={isLoading}
-                >
-                  Enviar
-                </button>
-              </form>
-            </div>
-          </section>
 
-          {/* Footer */}
-          <footer className="mt-16 text-center">
-            <p className="text-sm text-gray-500">
-              © {new Date().getFullYear()} ChatBot. Todos los derechos reservados.
-            </p>
-          </footer>
+                {/* Paso 2 */}
+                <div className="relative">
+                  <div className="md:flex items-center">
+                    <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8 md:order-last">
+                      <div className="md:float-left">
+                        <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
+                          <span className="text-xl font-bold">2</span>
+                        </div>
+                        <h3 className="text-xl font-medium text-gray-900">Escribe tu pregunta</h3>
+                        <p className="mt-2 text-base text-gray-500">
+                          Escribe tu pregunta o solicitud en el campo de texto y presiona enviar.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2"></div>
+                    <div className="md:w-1/2 md:pr-8 md:order-first">
+                      <div className="bg-white p-4 rounded-lg shadow-md">
+                        <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center">
+                          <div className="w-3/4 bg-white rounded-full p-2 border border-gray-300 flex">
+                            <div className="flex-1 text-gray-400">Escribe un mensaje...</div>
+                            <div className="bg-indigo-600 rounded-full p-1 text-white">➤</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Paso 3 */}
+                <div className="relative">
+                  <div className="md:flex items-center">
+                    <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                      <div className="md:float-right text-right">
+                        <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
+                          <span className="text-xl font-bold">3</span>
+                        </div>
+                        <h3 className="text-xl font-medium text-gray-900">Recibe tu respuesta</h3>
+                        <p className="mt-2 text-base text-gray-500">
+                          Nuestro asistente procesará tu pregunta y te dará una respuesta inmediata.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2"></div>
+                    <div className="md:w-1/2 md:pl-8">
+                      <div className="bg-white p-4 rounded-lg shadow-md">
+                        <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center">
+                          <div className="flex items-start space-x-2 w-3/4">
+                            <div className="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center text-white flex-shrink-0">
+                              <span className="text-xs">AI</span>
+                            </div>
+                            <div className="bg-white p-2 rounded-lg shadow-sm">
+                              <p className="text-sm text-gray-800">Aquí está la información que solicitaste...</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
+      </section>
+
+      {/* Testimonios */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Lo que dicen nuestros usuarios</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+              Miles de personas ya confían en nuestro asistente virtual.
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* Testimonio 1 */}
+            <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white">
+                  <span className="text-lg font-bold">M</span>
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-lg font-medium text-gray-900">María G.</h4>
+                  <p className="text-gray-500">Empresaria</p>
+                </div>
+              </div>
+              <p className="text-gray-600 italic">
+                "Este asistente virtual ha revolucionado la forma en que atendemos a nuestros clientes. Las respuestas
+                son rápidas y precisas."
+              </p>
+              <div className="mt-4 flex text-yellow-400">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+
+            {/* Testimonio 2 */}
+            <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white">
+                  <span className="text-lg font-bold">J</span>
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-lg font-medium text-gray-900">Juan P.</h4>
+                  <p className="text-gray-500">Desarrollador</p>
+                </div>
+              </div>
+              <p className="text-gray-600 italic">
+                "La integración con n8n fue muy sencilla. Ahora tenemos un asistente personalizado que responde
+                exactamente lo que necesitamos."
+              </p>
+              <div className="mt-4 flex text-yellow-400">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+
+            {/* Testimonio 3 */}
+            <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white">
+                  <span className="text-lg font-bold">L</span>
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-lg font-medium text-gray-900">Laura S.</h4>
+                  <p className="text-gray-500">Estudiante</p>
+                </div>
+              </div>
+              <p className="text-gray-600 italic">
+                "Me ayuda a resolver dudas rápidamente. Es como tener un tutor disponible 24/7 que siempre tiene la
+                respuesta correcta."
+              </p>
+              <div className="mt-4 flex text-yellow-400">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 relative overflow-hidden">
+        {/* Patrón de fondo */}
+        <div className="absolute inset-0 opacity-10">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 0 10 L 40 10 M 10 0 L 10 40" stroke="white" strokeWidth="1" fill="none" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">¿Listo para comenzar?</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-indigo-100">
+              Prueba nuestro asistente virtual ahora y descubre cómo puede ayudarte.
+            </p>
+            <div className="mt-8">
+              <button
+                onClick={() => document.getElementById("chat-button")?.click()}
+                className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Iniciar chat ahora
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Elemento oculto para identificar el botón del chat */}
+      <div id="chat-button" className="hidden"></div>
+    </div>
   )
 }
 
