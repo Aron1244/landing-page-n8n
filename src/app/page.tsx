@@ -27,6 +27,10 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500">
               Obtén respuestas precisas a tus preguntas con nuestro asistente impulsado por inteligencia artificial.
+              <br />
+              <br />
+              <br />
+              <br />
             </p>
             <div className="mt-10 flex justify-center">
               <div className="rounded-md shadow">
@@ -195,7 +199,7 @@ export default function Home() {
                 <div className="relative">
                   <div className="md:flex items-center">
                     <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8 md:order-last">
-                      <div className="md:float-left">
+                      <div className="md:float-left ml-0 md:ml-8 text-left">
                         <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
                           <span className="text-xl font-bold">2</span>
                         </div>
