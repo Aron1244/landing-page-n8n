@@ -259,7 +259,7 @@ export default function Navbar() {
                 <path d="M2 17l10 5 10-5" />
                 <path d="M2 12l10 5 10-5" />
               </svg>
-              <span>Mi Empresa</span>
+              <span>Bit&Brain</span>
             </Link>
           </div>
 
