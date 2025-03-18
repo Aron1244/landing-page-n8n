@@ -265,9 +265,6 @@ export default function Navbar() {
 
           {/* Menú en pantallas grandes */}
           <div className="hidden md:flex items-center space-x-1">
-            <NavLink href="/about">Sobre Nosotros</NavLink>
-            <NavLink href="/mision">Misión</NavLink>
-            <NavLink href="/vision">Visión</NavLink>
 
             <div className="ml-6 flex items-center space-x-4">
               {/* <Link
@@ -282,6 +279,15 @@ export default function Navbar() {
                 <div className="w-8 h-8 rounded-full bg-gray-200 animate-pulse"></div>
               ) : user ? (
                 <div className="flex items-center space-x-2">
+                  {user.role === "admin" && (
+                      <button
+                        onClick={() => navigateTo("/admin")}
+                        className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
+                      >
+                        Panel de Administración
+                      </button>
+                    )}
+                  
                   <button className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200">
                     <a href="/profile">Perfil</a>
                   </button>
