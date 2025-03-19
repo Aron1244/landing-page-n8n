@@ -121,6 +121,45 @@ export default function AdminDashboard() {
                     </div>
                   </div>
 
+                  {/* Tarjeta de Gráfico de Usuarios */}
+                  <div className="bg-white overflow-hidden shadow rounded-lg border">
+                    <div className="px-4 py-5 sm:p-6">
+                      <div className="flex items-center">
+                        <div className="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                          <svg
+                            className="h-6 w-6 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                            />
+                          </svg>
+                        </div>
+                        <div className="ml-5 w-0 flex-1">
+                          <dl>
+                            <dt className="text-sm font-medium text-gray-500 truncate">Gráfico de Usuarios</dt>
+                            <dd>
+                              <div className="text-lg font-medium text-gray-900">Ver gráfico de usuarios con acceso</div>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                      <div className="mt-5">
+                        <Link
+                          href="/admin/accesschart"
+                          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                          Ver gráfico
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
