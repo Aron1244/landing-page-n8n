@@ -28,11 +28,8 @@ export default function Home() {
             <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500">
               Obtén respuestas precisas a tus preguntas con nuestro asistente
               impulsado por inteligencia artificial.
-              <br />
-              <br />
-              <br />
-              <br />
             </p>
+            <div className="mb-30"></div>
             <div className="mt-10 flex justify-center">
               <div className="rounded-md shadow">
                 <button

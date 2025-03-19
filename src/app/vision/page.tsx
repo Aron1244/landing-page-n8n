@@ -4,7 +4,7 @@ export default function Vision() {
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-24 overflow-hidden">
         {/* Fondo con gradiente */}
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50">
           <div
@@ -30,6 +30,7 @@ export default function Vision() {
               tecnología avanzada, transformando industrias y mejorando la vida
               de las personas con soluciones inteligentes y accesibles.
             </p>
+            <div className="mb-50"></div>
           </div>
         </div>
 

@@ -9,7 +9,7 @@ type User = {
   name: string
   email: string
   role?: string
-  password: String
+  password: string
   has_access?: boolean
 }
 
@@ -23,14 +23,14 @@ export default function UserModal({ user, onClose, onSave }: UserModalProps) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [role, setRole] = useState("user")
+  const [role, setRole] = useState("customer")
   const [hasAccess, setHasAccess] = useState(true)
 
   useEffect(() => {
     if (user) {
       setName(user.name)
       setEmail(user.email)
-      setRole(user.role || "user")
+      setRole(user.role || "customer")
       setHasAccess(user.has_access !== false)
     }
   }, [user])
@@ -104,7 +104,7 @@ export default function UserModal({ user, onClose, onSave }: UserModalProps) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-700"
-                  required={!user}
+                  required
                 />
               </div>
 
@@ -119,7 +119,7 @@ export default function UserModal({ user, onClose, onSave }: UserModalProps) {
                   onChange={(e) => setRole(e.target.value)}
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-700"
                 >
-                  <option value="user">Usuario</option>
+                  <option value="customer">Cliente</option>
                   <option value="admin">Administrador</option>
                 </select>
               </div>

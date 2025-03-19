@@ -31,6 +31,7 @@ export default function Mision() {
               superar desafíos con productos fáciles de usar y de alto
               rendimiento.
             </p>
+            <div className="mb-50"></div>
           </div>
         </div>
 
