@@ -3,6 +3,7 @@
 import type React from "react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 
 type User = {
@@ -233,7 +234,7 @@ export default function Navbar() {
               href="/"
               className="flex items-center space-x-2 text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600"
             >
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-8 w-8"
                 viewBox="0 0 24 24"
@@ -258,14 +259,21 @@ export default function Navbar() {
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />
                 <path d="M2 17l10 5 10-5" />
                 <path d="M2 12l10 5 10-5" />
-              </svg>
+              </svg> */}
+              <Image
+                src="/Bit&Brain.svg" // Ruta de la imagen
+                alt="Logo Bit&Brain"
+                width={48} // Ancho de la imagen
+                height={48} // Alto de la imagen
+                layout="intrinsic"
+                className="mr-2 rounded-full"
+              />
               <span>Bit&Brain</span>
             </Link>
           </div>
 
           {/* Menú en pantallas grandes */}
           <div className="hidden md:flex items-center space-x-1">
-
             <div className="ml-6 flex items-center space-x-4">
               {/* <Link
                 href="#chat"
@@ -280,14 +288,14 @@ export default function Navbar() {
               ) : user ? (
                 <div className="flex items-center space-x-2">
                   {user.role === "admin" && (
-                      <button
-                        onClick={() => navigateTo("/admin")}
-                        className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
-                      >
-                        Panel de Administración
-                      </button>
-                    )}
-                  
+                    <button
+                      onClick={() => navigateTo("/admin")}
+                      className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
+                    >
+                      Panel de Administración
+                    </button>
+                  )}
+
                   <button className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200">
                     <a href="/profile">Perfil</a>
                   </button>
