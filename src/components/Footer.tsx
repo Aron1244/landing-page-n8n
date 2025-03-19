@@ -33,7 +33,7 @@ export default function Footer() {
                 <path d="M2 17l10 5 10-5" />
                 <path d="M2 12l10 5 10-5" />
               </svg>
-              <span>Mi Empresa</span>
+              <span>Bit&Brain</span>
             </Link>
             <p className="mt-4 text-gray-600 text-sm">
               Ofrecemos soluciones innovadoras para mejorar la experiencia de nuestros usuarios con tecnología avanzada.
