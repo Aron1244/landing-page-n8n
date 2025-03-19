@@ -29,27 +29,7 @@ export default function Home() {
               Obtén respuestas precisas a tus preguntas con nuestro asistente
               impulsado por inteligencia artificial.
             </p>
-            <div className="mb-30"></div>
-            <div className="mt-10 flex justify-center">
-              <div className="rounded-md shadow">
-                <button
-                  onClick={() =>
-                    document.getElementById("chat-button")?.click()
-                  }
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 md:py-4 md:text-lg md:px-10 transition-all duration-300 transform hover:scale-105"
-                >
-                  Iniciar conversación
-                </button>
-              </div>
-              <div className="ml-3 rounded-md shadow">
-                <a
-                  href="#como-funciona"
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 mb-10"
-                >
-                  Cómo funciona
-                </a>
-              </div>
-            </div>
+            <div className="mb-50"></div>
           </div>
         </div>
 

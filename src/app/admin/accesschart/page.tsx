@@ -1,34 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement,
-  CategoryScale,
-  LinearScale,
-  DoughnutController,
-} from "chart.js";
+import { select, pie, arc, scaleOrdinal } from "d3";
 import ArrowBack from "@/components/admin/ArrowBack";
-
-// Registra los componentes necesarios de Chart.js
-ChartJS.register(
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement,
-  CategoryScale,
-  LinearScale,
-  DoughnutController
-);
 
 export default function AccessChart() {
   const [users, setUsers] = useState<any>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const chartRef = useRef<HTMLCanvasElement | null>(null);
-  const chartInstanceRef = useRef<ChartJS | null>(null);
+  const chartRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -48,49 +27,81 @@ export default function AccessChart() {
 
   useEffect(() => {
     if (chartRef.current && !isLoading) {
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.destroy();
-      }
-
+      // Filtra usuarios con y sin acceso
       const usersWithAccess = users.filter((user: any) => user.has_access);
       const usersWithoutAccess = users.filter((user: any) => !user.has_access);
 
-      const chartData = {
-        labels: ["Con acceso", "Sin acceso"],
-        datasets: [
-          {
-            label: "Usuarios con acceso",
-            data: [usersWithAccess.length, usersWithoutAccess.length],
-            backgroundColor: ["#4F46E5", "#D1D5DB"], // Colores del gráfico
-            borderColor: ["#4338CA", "#6B7280"],
-            borderWidth: 1,
-          },
-        ],
-      };
+      // Datos para el gráfico
+      const data = [
+        { label: "Con acceso", value: usersWithAccess.length },
+        { label: "Sin acceso", value: usersWithoutAccess.length },
+      ];
 
-      const config = {
-        type: "doughnut" as const,
-        data: chartData,
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              position: "top" as const,
-            },
-            tooltip: {
-              callbacks: {
-                label: function (context: any) {
-                  const value = context.raw;
-                  return `${context.label}: ${value} usuarios`;
-                },
-              },
-            },
-          },
-        },
-      };
+      // Define el radio del gráfico y los márgenes
+      const width = 400;
+      const height = 400;
+      const margin = 40;
 
-      // Crea el gráfico
-      chartInstanceRef.current = new ChartJS(chartRef.current, config);
+      const radius = Math.min(width, height) / 2 - margin;
+
+      // Crea el gráfico de pastel (pie chart) con D3.js
+      const svg = select(chartRef.current)
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+      const color = scaleOrdinal()
+        .domain(data.map((d) => d.label))
+        .range(["#4F46E5", "#D1D5DB"]); // Colores para las secciones
+
+      const pieGenerator = pie<{ label: string; value: number }>().value(
+        (d: { label: string; value: number }) => d.value
+      );
+      const arcGenerator = arc<any>().innerRadius(0).outerRadius(radius);
+
+      const arcData = pieGenerator(data);
+
+      const paths = svg
+        .selectAll("path")
+        .data(arcData)
+        .enter()
+        .append("path")
+        .attr("d", arcGenerator)
+        .attr("fill", (d) => color(d.data.label) as string)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 2);
+
+      // Agregar las etiquetas al gráfico
+      svg
+        .selectAll("text")
+        .data(arcData)
+        .enter()
+        .append("text")
+        .attr("transform", (d) => `translate(${arcGenerator.centroid(d)})`)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "14px")
+        .attr("fill", "white")
+        .text((d) => `${d.data.label}: ${d.data.value}`);
+
+      // Efectos de hover
+      paths
+        .on("mouseover", function (event, d) {
+          // Aumenta el tamaño y cambia el color
+          select(this)
+            .transition()
+            .duration(300)
+            .attr("transform", "scale(1.1)") // Aumenta el tamaño
+            .attr("fill", "#3B82F6"); // Cambia el color a un azul más intenso
+        })
+        .on("mouseout", function (event, d) {
+          // Restaura el tamaño y el color original
+          select(this)
+            .transition()
+            .duration(300)
+            .attr("transform", "scale(1)") // Restaura el tamaño
+            .attr("fill", color(d.data.label) as string); // Restaura el color original
+        });
     }
   }, [users, isLoading]);
 
@@ -121,9 +132,37 @@ export default function AccessChart() {
               </p>
             </div>
 
-            <div className="px-4 py-5 sm:p-6">
-              <div className="h-80">
-                <canvas ref={chartRef}></canvas>
+            <div className="px-4 py-5 sm:p-6 mb-20">
+              <div className="flex justify-center items-center">
+                <svg ref={chartRef} className="w-1/2"></svg>
+                <div className="flex flex-col justify-center items-center w-1/2">
+                  <div className="text-center mx-4">
+                    <h3 className="text-lg font-medium text-gray-900">
+                      Con acceso
+                    </h3>
+                    <p className="text-2xl font-bold text-indigo-600">
+                      {(
+                        (users.filter((user: any) => user.has_access).length /
+                          users.length) *
+                        100
+                      ).toFixed(2)}
+                      %
+                    </p>
+                  </div>
+                  <div className="text-center mx-4 mt-4">
+                    <h3 className="text-lg font-medium text-gray-900">
+                      Sin acceso
+                    </h3>
+                    <p className="text-2xl font-bold text-indigo-600">
+                      {(
+                        (users.filter((user: any) => !user.has_access).length /
+                          users.length) *
+                        100
+                      ).toFixed(2)}
+                      %
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
