@@ -287,6 +287,12 @@ export default function Navbar() {
                 <div className="w-8 h-8 rounded-full bg-gray-200 animate-pulse"></div>
               ) : user ? (
                 <div className="flex items-center space-x-2">
+                  <button
+                    onClick={() => navigateTo("/pricing")}
+                    className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
+                  >
+                    Precios
+                  </button>
                   {user.role === "admin" && (
                     <button
                       onClick={() => navigateTo("/admin")}
@@ -308,6 +314,12 @@ export default function Navbar() {
                 </div>
               ) : (
                 <div className="flex items-center space-x-2">
+                  <button
+                    onClick={() => navigateTo("/pricing")}
+                    className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
+                  >
+                    Precios
+                  </button>
                   <Link
                     href="/login"
                     className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
