@@ -288,6 +288,18 @@ export default function Navbar() {
               ) : user ? (
                 <div className="flex items-center space-x-2">
                   <button
+                    onClick={() => navigateTo("/instructions")}
+                    className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
+                  >
+                    Instrucciones
+                  </button>
+                  <button
+                    onClick={() => navigateTo("/sales")}
+                    className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
+                  >
+                    Ventas
+                  </button>
+                  <button
                     onClick={() => navigateTo("/pricing")}
                     className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
                   >
@@ -315,6 +327,18 @@ export default function Navbar() {
               ) : (
                 <div className="flex items-center space-x-2">
                   <button
+                    onClick={() => navigateTo("/instructions")}
+                    className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
+                  >
+                    Instrucciones
+                  </button>
+                  <button
+                    onClick={() => navigateTo("/sales")}
+                    className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
+                  >
+                    Ventas
+                  </button>
+                  <button
                     onClick={() => navigateTo("/pricing")}
                     className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
                   >
@@ -339,56 +363,6 @@ export default function Navbar() {
 
           {/* Botón de menú móvil */}
           <div className="md:hidden flex items-center space-x-4">
-            {!isLoading && user && (
-              <div className="relative" ref={userMenuRef}>
-                <button
-                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center focus:outline-none"
-                >
-                  <div className="h-8 w-8 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white">
-                    <span className="text-xs font-medium">
-                      {user.name.charAt(0).toUpperCase()}
-                    </span>
-                  </div>
-                </button>
-
-                {/* Menú desplegable del usuario en móvil */}
-                {isUserMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-200">
-                    <div className="px-4 py-2 border-b border-gray-100">
-                      <p className="text-sm font-medium text-gray-900">
-                        {user.name}
-                      </p>
-                      <p className="text-xs text-gray-500 truncate">
-                        {user.email}
-                      </p>
-                    </div>
-                    {/* Usar botones en lugar de enlaces para mejor control */}
-                    <button
-                      onClick={() => navigateTo("/profile")}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Mi Perfil
-                    </button>
-                    {user.role === "admin" && (
-                      <button
-                        onClick={() => navigateTo("/admin")}
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Panel de Administración
-                      </button>
-                    )}
-                    <button
-                      onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-                    >
-                      Cerrar Sesión
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
-
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
@@ -396,7 +370,7 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               <span className="sr-only">Abrir menú</span>
-              <div className="relative w-6 h-6">
+              <div className="relative w-6 h-6 py-4">
                 <span
                   className={`absolute block w-6 h-0.5 bg-gray-700 transform transition-all duration-300 ease-in-out ${
                     isOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
@@ -421,23 +395,29 @@ export default function Navbar() {
       {/* Menú desplegable en móvil */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-96 opacity-100 bg-indigo-50" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-white border-t px-4 py-2 space-y-3">
-          <MobileNavLink href="/about">Sobre Nosotros</MobileNavLink>
-          <MobileNavLink href="/mision">Misión</MobileNavLink>
-          <MobileNavLink href="/vision">Visión</MobileNavLink>
-
-          <div className="pt-2 border-t border-gray-100">
-            <Link
-              href="#chat"
-              className="block w-full text-center px-4 py-2.5 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium shadow-sm hover:shadow-md transition-all duration-200"
-              id="chat-button"
-            >
-              Chatear Ahora
-            </Link>
-          </div>
+        <div className="bg-white px-4 py-2 space-y-3 mt-4 pt-4 bg-indigo-50 border-t border-gray-200">
+          <MobileNavLink href="/pricing">Precios</MobileNavLink>
+          <MobileNavLink href="/instructions">Instrucciones</MobileNavLink>
+          <MobileNavLink href="/sales">Ventas</MobileNavLink>
+          {!isLoading && user && (
+            <div className="pt-2 flex flex-col space-y-2">
+              <MobileNavLink href="/profile">Mi Perfil</MobileNavLink>
+              {user.role === "admin" && (
+                <MobileNavLink href="/admin">
+                  Panel de Administración
+                </MobileNavLink>
+              )}
+              <button
+                onClick={handleLogout}
+                className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 bg-red-50 rounded-lg text-center"
+              >
+                Cerrar Sesión
+              </button>
+            </div>
+          )}
 
           {!isLoading && !user && (
             <div className="pt-2 flex flex-col space-y-2">
@@ -488,7 +468,7 @@ function MobileNavLink({
   return (
     <Link
       href={href}
-      className="block px-3 py-2 rounded-md text-gray-700 font-medium hover:text-indigo-600 hover:bg-indigo-50 transition-all duration-200"
+      className="block px-3 py-2 rounded-md font-medium hover:text-indigo-600 hover:bg-indigo-50 transition-all duration-200 bg-indigo-50 text-indigo-600"
     >
       {children}
     </Link>
