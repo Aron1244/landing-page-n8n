@@ -237,7 +237,7 @@ export default function ChatComponent() {
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         } ${
           isExpanded
-            ? "bottom-0 right-0 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 h-screen"
+            ? "bottom-0 right-0 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 h-screen pt-90"
             : "bottom-20 right-6 w-[90%] max-w-[420px] sm:w-[420px]"
         }`}
       >
