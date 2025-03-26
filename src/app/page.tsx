@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* Características */}
-      <section className="py-16 bg-white">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -149,129 +149,6 @@ export default function Home() {
                   Conecta con n8n para personalizar las respuestas según tus
                   necesidades específicas.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Cómo funciona */}
-      <section id="como-funciona" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              Cómo funciona
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              Usar nuestro asistente virtual es muy sencillo.
-            </p>
-          </div>
-
-          <div className="mt-16">
-            <div className="relative">
-              {/* Línea de conexión */}
-              <div className="hidden md:block absolute top-0 left-1/2 w-0.5 h-full bg-gradient-to-b from-indigo-600 to-purple-600 transform -translate-x-1/2"></div>
-
-              <div className="space-y-16">
-                {/* Paso 1 */}
-                <div className="relative">
-                  <div className="md:flex items-center">
-                    <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-                      <div className="md:float-right text-right">
-                        <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
-                          <span className="text-xl font-bold">1</span>
-                        </div>
-                        <h3 className="text-xl font-medium text-gray-900">
-                          Haz clic en el chat
-                        </h3>
-                        <p className="mt-2 text-base text-gray-500">
-                          Abre el chat haciendo clic en el botón flotante
-                          ubicado en la esquina inferior derecha.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2"></div>
-                    <div className="md:w-1/2 md:pl-8">
-                      <div className="bg-white p-4 rounded-lg shadow-md">
-                        <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center">
-                          <span className="text-4xl">💬</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Paso 2 */}
-                <div className="relative">
-                  <div className="md:flex items-center">
-                    <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8 md:order-last">
-                      <div className="md:float-left ml-0 md:ml-8 text-left">
-                        <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
-                          <span className="text-xl font-bold">2</span>
-                        </div>
-                        <h3 className="text-xl font-medium text-gray-900">
-                          Escribe tu pregunta
-                        </h3>
-                        <p className="mt-2 text-base text-gray-500">
-                          Escribe tu pregunta o solicitud en el campo de texto y
-                          presiona enviar.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2"></div>
-                    <div className="md:w-1/2 md:pr-8 md:order-first">
-                      <div className="bg-white p-4 rounded-lg shadow-md">
-                        <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center">
-                          <div className="w-3/4 bg-white rounded-full p-2 border border-gray-300 flex">
-                            <div className="flex-1 text-gray-400">
-                              Escribe un mensaje...
-                            </div>
-                            <div className="bg-indigo-600 rounded-full p-1 text-white">
-                              ➤
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Paso 3 */}
-                <div className="relative">
-                  <div className="md:flex items-center">
-                    <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-                      <div className="md:float-right text-right">
-                        <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg mb-4">
-                          <span className="text-xl font-bold">3</span>
-                        </div>
-                        <h3 className="text-xl font-medium text-gray-900">
-                          Recibe tu respuesta
-                        </h3>
-                        <p className="mt-2 text-base text-gray-500">
-                          Nuestro asistente procesará tu pregunta y te dará una
-                          respuesta inmediata.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="hidden md:block absolute top-0 left-1/2 w-8 h-8 bg-indigo-600 rounded-full transform -translate-x-1/2"></div>
-                    <div className="md:w-1/2 md:pl-8">
-                      <div className="bg-white p-4 rounded-lg shadow-md">
-                        <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center">
-                          <div className="flex items-start space-x-2 w-3/4">
-                            <div className="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center text-white flex-shrink-0">
-                              <span className="text-xs">AI</span>
-                            </div>
-                            <div className="bg-white p-2 rounded-lg shadow-sm">
-                              <p className="text-sm text-gray-800">
-                                Aquí está la información que solicitaste...
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
