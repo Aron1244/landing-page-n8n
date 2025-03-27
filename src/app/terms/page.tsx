@@ -50,7 +50,7 @@ export default function Terms() {
               <p className="mt-4 text-base text-gray-500">
                 Nos comprometemos a proteger tu privacidad y seguridad. Por
                 favor, revisa nuestra{" "}
-                <a href="/privacy-policy" className="text-indigo-600">
+                <a href="/privacy" className="text-indigo-600">
                   Política de Privacidad
                 </a>{" "}
                 para más detalles sobre cómo recopilamos, usamos y protegemos
