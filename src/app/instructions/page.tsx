@@ -209,7 +209,9 @@ export default function Instructions() {
                                 d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
                               ></path>
                             </svg>
-                            <span>Catálogo de herramientas</span>
+                            <span className="text-gray-500">
+                              Catálogo de herramientas
+                            </span>
                           </div>
                           <div className="flex items-center space-x-2">
                             <svg
@@ -226,7 +228,9 @@ export default function Instructions() {
                                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
                               ></path>
                             </svg>
-                            <span>Inventario de materiales</span>
+                            <span className="text-gray-500">
+                              Inventario de materiales
+                            </span>
                           </div>
                           <div className="flex items-center space-x-2">
                             <svg
@@ -243,7 +247,9 @@ export default function Instructions() {
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                               ></path>
                             </svg>
-                            <span>Especificaciones técnicas</span>
+                            <span className="text-gray-500">
+                              Especificaciones técnicas
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -290,14 +296,14 @@ export default function Instructions() {
                               <span className="text-xs">AI</span>
                             </div>
                             <div className="bg-gray-100 p-3 rounded-lg">
-                              <p className="text-sm">
+                              <p className="text-sm text-gray-500">
                                 ¿Tienen taladros inalámbricos?
                               </p>
                             </div>
                           </div>
                           <div className="flex items-start space-x-3 justify-end">
                             <div className="bg-indigo-50 p-3 rounded-lg">
-                              <p className="text-sm">
+                              <p className="text-sm text-gray-500">
                                 Sí, contamos con taladros DeWalt 20V MAX...
                               </p>
                             </div>
@@ -375,7 +381,9 @@ export default function Instructions() {
                                 ></path>
                               </svg>
                             </div>
-                            <span className="mt-2 text-sm">WhatsApp</span>
+                            <span className="mt-2 text-sm text-green-500">
+                              WhatsApp
+                            </span>
                           </div>
                           <div className="flex flex-col items-center">
                             <div className="h-12 w-12 rounded-lg bg-indigo-500 flex items-center justify-center text-white">
@@ -394,7 +402,9 @@ export default function Instructions() {
                                 ></path>
                               </svg>
                             </div>
-                            <span className="mt-2 text-sm">Telegram</span>
+                            <span className="mt-2 text-sm text-blue-600">
+                              Telegram
+                            </span>
                           </div>
                           <div className="flex flex-col items-center">
                             <div className="h-12 w-12 rounded-lg bg-purple-500 flex items-center justify-center text-white">
@@ -413,7 +423,9 @@ export default function Instructions() {
                                 ></path>
                               </svg>
                             </div>
-                            <span className="mt-2 text-sm">Web</span>
+                            <span className="mt-2 text-sm text-purple-500">
+                              Web
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -456,14 +468,18 @@ export default function Instructions() {
                       <div className="bg-white p-6 rounded-lg shadow-md">
                         <div className="space-y-4">
                           <div className="flex justify-between items-center">
-                            <span>Precisión de Respuestas</span>
+                            <span className="text-gray-500">
+                              Precisión de Respuestas
+                            </span>
                             <div className="h-2 w-24 bg-gray-200 rounded-full">
                               <div className="h-2 w-20 bg-green-500 rounded-full"></div>
                             </div>
                             <span className="text-green-500">95%</span>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span>Tiempo de Respuesta</span>
+                            <span className="text-gray-500">
+                              Tiempo de Respuesta
+                            </span>
                             <div className="h-2 w-24 bg-gray-200 rounded-full">
                               <div className="h-2 w-22 bg-indigo-500 rounded-full"></div>
                             </div>
