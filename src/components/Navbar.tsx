@@ -36,7 +36,7 @@ export default function Navbar() {
         if (token && userId) {
           // Hacer una petición directa a la API
           const response = await fetch(
-            `http://localhost:8000/api/user/${userId}`
+            `http://localhost:8000/api/users/${userId}`
           );
 
           if (response.ok) {
@@ -152,7 +152,7 @@ export default function Navbar() {
         const fetchUser = async () => {
           try {
             const response = await fetch(
-              `http://localhost:8000/api/user/${userId}`
+              `http://localhost:8000/api/users/${userId}`
             );
             if (response.ok) {
               const userData = await response.json();
@@ -185,7 +185,7 @@ export default function Navbar() {
 
           if (token && userId) {
             const response = await fetch(
-              `http://localhost:8000/api/user/${userId}`
+              `http://localhost:8000/api/users/${userId}`
             );
             if (response.ok) {
               const userData = await response.json();

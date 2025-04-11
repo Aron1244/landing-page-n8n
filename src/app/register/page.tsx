@@ -30,7 +30,7 @@ export default function Register() {
 
     try {
       // Llamar directamente al endpoint de registro
-      const response = await fetch("http://localhost:8000/api/user", {
+      const response = await fetch("http://localhost:8000/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

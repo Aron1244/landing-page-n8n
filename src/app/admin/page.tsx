@@ -28,7 +28,7 @@ export default function AdminDashboard() {
           return
         }
 
-        const response = await fetch(`http://localhost:8000/api/user/${userId}`)
+        const response = await fetch(`http://localhost:8000/api/users/${userId}`)
 
         if (!response.ok) {
           throw new Error("Error al obtener información del usuario")
