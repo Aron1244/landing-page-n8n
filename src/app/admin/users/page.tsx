@@ -36,7 +36,7 @@ export default function UsersManagement() {
           return
         }
 
-        const response = await fetch(`http://localhost:8000/api/user/${userId}`)
+        const response = await fetch(`http://localhost:8000/api/users/${userId}`)
 
         if (!response.ok) {
           throw new Error("Error al obtener información del usuario")
@@ -64,7 +64,7 @@ export default function UsersManagement() {
   const fetchUsers = async () => {
     try {
       setIsLoading(true)
-      const response = await fetch("http://localhost:8000/api/user")
+      const response = await fetch("http://localhost:8000/api/users")
 
       if (!response.ok) {
         throw new Error("Error al obtener usuarios")
@@ -98,7 +98,7 @@ export default function UsersManagement() {
     if (!userToDelete) return
 
     try {
-      const response = await fetch(`http://localhost:8000/api/user/${userToDelete.id}`, {
+      const response = await fetch(`http://localhost:8000/api/users/${userToDelete.id}`, {
         method: "DELETE",
       })
 
@@ -119,7 +119,7 @@ export default function UsersManagement() {
     try {
       if (selectedUser) {
         // Actualizar usuario existente
-        const response = await fetch(`http://localhost:8000/api/user/${selectedUser.id}`, {
+        const response = await fetch(`http://localhost:8000/api/users/${selectedUser.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -135,7 +135,7 @@ export default function UsersManagement() {
         setUsers(users.map((user) => (user.id === selectedUser.id ? updatedUser : user)))
       } else {
         // Crear nuevo usuario
-        const response = await fetch("http://localhost:8000/api/user", {
+        const response = await fetch("http://localhost:8000/api/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

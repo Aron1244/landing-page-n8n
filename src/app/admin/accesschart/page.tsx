@@ -12,7 +12,7 @@ export default function AccessChart() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/user");
+        const response = await fetch("http://localhost:8000/api/users");
         const data = await response.json();
         setUsers(data);
       } catch (error) {

@@ -38,7 +38,7 @@ export default function Profile() {
         }
 
         const response = await fetch(
-          `http://localhost:8000/api/user/${userId}`
+          `http://localhost:8000/api/users/${userId}`
         );
 
         if (!response.ok) {
@@ -88,7 +88,7 @@ export default function Profile() {
         updateData.password = newPassword;
       }
 
-      const response = await fetch(`http://localhost:8000/api/user/${userId}`, {
+      const response = await fetch(`http://localhost:8000/api/users/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

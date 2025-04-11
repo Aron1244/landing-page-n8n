@@ -21,7 +21,7 @@ export default function Login() {
 
     try {
       // Obtener todos los usuarios directamente del endpoint
-      const response = await fetch("http://localhost:8000/api/user");
+      const response = await fetch("http://localhost:8000/api/users");
 
       if (!response.ok) {
         throw new Error("Error al conectar con el servidor");

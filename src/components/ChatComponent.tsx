@@ -46,7 +46,7 @@ export default function ChatComponent() {
         }
 
         const response = await fetch(
-          `http://localhost:8000/api/user/${userId}`
+          `http://localhost:8000/api/users/${userId}`
         );
 
         if (!response.ok) {
