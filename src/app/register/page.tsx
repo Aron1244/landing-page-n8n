@@ -40,7 +40,7 @@ export default function Register() {
           email,
           password,
           role: "customer", // Asignamos un rol por defecto
-          has_access: true, // Asumimos que por defecto tiene acceso
+          has_access: false, // Asumimos que por defecto tiene acceso
         }),
       });
 

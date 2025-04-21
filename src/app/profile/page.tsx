@@ -5,6 +5,22 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+type Plan = {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  features: string[];
+};
+
+type Payment = {
+  id: number;
+  plan: Plan;
+  status: 'pending' | 'completed' | 'failed';
+  starts_at: string | null;
+  ends_at: string | null;
+};
+
 type User = {
   id: number;
   name: string;
