@@ -29,12 +29,10 @@ export default function Navbar() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        // Verificar si hay un token en localStorage
         const token = localStorage.getItem("auth_token");
         const userId = localStorage.getItem("user_id");
 
         if (token && userId) {
-          // Hacer una petición directa a la API
           const response = await fetch(
             `http://localhost:8000/api/users/${userId}`
           );
@@ -42,8 +40,12 @@ export default function Navbar() {
           if (response.ok) {
             const userData = await response.json();
             setUser(userData);
+
+            // Guardar el user_id en localStorage si no está ya guardado
+            if (!localStorage.getItem("user_id")) {
+              localStorage.setItem("user_id", userData.id.toString());
+            }
           } else {
-            // Si la respuesta no es exitosa, limpiar el token
             localStorage.removeItem("auth_token");
             localStorage.removeItem("user_id");
             setUser(null);
