@@ -5,6 +5,22 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+type Plan = {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  features: string[];
+};
+
+type Payment = {
+  id: number;
+  plan: Plan;
+  status: 'pending' | 'completed' | 'failed';
+  starts_at: string | null;
+  ends_at: string | null;
+};
+
 type User = {
   id: number;
   name: string;
@@ -78,6 +94,11 @@ export default function Profile() {
         name,
         email,
       };
+
+      if (newPassword.length < 6) {
+        setError("La nueva contraseña debe tener al menos 6 caracteres");
+        return;
+      }
 
       // Solo incluir la contraseña si se está intentando cambiar
       if (newPassword) {

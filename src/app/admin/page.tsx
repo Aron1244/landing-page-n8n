@@ -160,6 +160,46 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Tarjeta de Gestión de Revenue */}
+                  <div className="bg-white overflow-hidden shadow rounded-lg border">
+                    <div className="px-4 py-5 sm:p-6">
+                      <div className="flex items-center">
+                        <div className="flex-shrink-0 bg-green-500 rounded-md p-3">
+                          <svg
+                            className="h-6 w-6 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 8c-3.866 0-7 1.79-7 4s3.134 4 7 4 7-1.79 7-4-3.134-4-7-4zm0 0V4m0 8v4"
+                            />
+                          </svg>
+                        </div>
+                        <div className="ml-5 w-0 flex-1">
+                          <dl>
+                            <dt className="text-sm font-medium text-gray-500 truncate">Gestión de Revenue</dt>
+                            <dd>
+                              <div className="text-lg font-medium text-gray-900">Administrar ingresos</div>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                      <div className="mt-5">
+                        <Link
+                          href="/admin/revenue"
+                          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                        >
+                          Ver ingresos
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
