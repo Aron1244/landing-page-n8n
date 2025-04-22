@@ -21,6 +21,12 @@ export default function Register() {
     setError("");
     setIsLoading(true);
 
+    if (password.length < 6) {
+      setError("La contraseña debe tener al menos 6 caracteres");
+      setIsLoading(false);
+      return;
+    }
+
     // Validación básica
     if (password !== passwordConfirmation) {
       setError("Las contraseñas no coinciden");

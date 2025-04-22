@@ -95,6 +95,11 @@ export default function Profile() {
         email,
       };
 
+      if (newPassword.length < 6) {
+        setError("La nueva contraseña debe tener al menos 6 caracteres");
+        return;
+      }
+
       // Solo incluir la contraseña si se está intentando cambiar
       if (newPassword) {
         if (newPassword !== confirmPassword) {
