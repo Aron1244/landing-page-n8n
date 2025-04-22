@@ -1,51 +1,53 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export default function ThanksPage() {
-  const [userName, setUserName] = useState<string>("")
-  const [isLoading, setIsLoading] = useState(true)
-  const router = useRouter()
-  const searchParams = useSearchParams()
+  const [userName, setUserName] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const status = searchParams?.get("status") || ""
-    const userId = searchParams?.get("user") || ""
+    const status = searchParams?.get("status") || "";
+    const userId = searchParams?.get("user") || "";
 
     // Verificar si la página se cargó con los parámetros correctos
     if (status !== "success" || !userId) {
-      router.push("/")
-      return
+      router.push("/");
+      return;
     }
 
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/user/${userId}`)
+        const response = await fetch(
+          `http://localhost:8000/api/users/${userId}`
+        );
 
         if (!response.ok) {
-          throw new Error("Error al obtener datos del usuario")
+          throw new Error("Error al obtener datos del usuario");
         }
 
-        const userData = await response.json()
-        setUserName(userData.name)
+        const userData = await response.json();
+        setUserName(userData.name);
       } catch (error) {
-        console.error("Error:", error)
+        console.error("Error:", error);
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
-    }
+    };
 
-    fetchUserData()
-  }, [router, searchParams])
+    fetchUserData();
+  }, [router, searchParams]);
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-600"></div>
       </div>
-    )
+    );
   }
 
   return (
@@ -62,20 +64,28 @@ export default function ThanksPage() {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
-            <h1 className="text-3xl font-extrabold text-white">¡Gracias por tu suscripción!</h1>
+            <h1 className="text-3xl font-extrabold text-white">
+              ¡Gracias por tu suscripción!
+            </h1>
             <p className="mt-2 text-lg text-indigo-100">
-              {userName ? `¡Hola ${userName}! ` : ""}Tu pago ha sido procesado con éxito.
+              {userName ? `¡Hola ${userName}! ` : ""}Tu pago ha sido procesado
+              con éxito.
             </p>
           </div>
 
           {/* Contenido */}
           <div className="px-6 py-8 text-center">
             <p className="text-gray-700 mb-6">
-              Tu suscripción está activa y ahora tienes acceso completo a todas las funcionalidades de nuestra
-              plataforma.
+              Tu suscripción está activa y ahora tienes acceso completo a todas
+              las funcionalidades de nuestra plataforma.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -96,5 +106,5 @@ export default function ThanksPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
