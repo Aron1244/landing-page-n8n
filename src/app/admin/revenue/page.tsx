@@ -420,7 +420,7 @@ const EarningsDashboard = () => {
 
       {/* Total Income Display */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        <h2 className="text-xl font-semibold text-indigo-800 mb-4">
           Ingresos Totales
         </h2>
         <div className="flex items-center">
@@ -433,17 +433,17 @@ const EarningsDashboard = () => {
 
       {/* Bar Chart - Ganancias por Plan */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        <h2 className="text-xl font-semibold text-indigo-800 mb-4">
           Ganancias por Plan
         </h2>
-        <div className="w-full overflow-x-auto">
+        <div className="w-full overflow-x-auto text-gray-800">
           <svg ref={barChartRef} className="mx-auto"></svg>
         </div>
       </div>
 
       {/* User Earnings Section */}
       <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        <h2 className="text-xl font-semibold text-indigo-800 mb-4">
           Ganancias por Usuario
         </h2>
         <div className="mb-6 relative">
@@ -453,7 +453,7 @@ const EarningsDashboard = () => {
           >
             Buscar Usuario
           </label>
-          <div className="flex items-center">
+          <div className="flex items-center text-gray-800">
             <input
               type="text"
               id="userSearch"
@@ -478,7 +478,7 @@ const EarningsDashboard = () => {
               {filteredUsers.map((user) => (
                 <div
                   key={user.id}
-                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-800"
                   onMouseDown={() => {
                     setSelectedUser(user);
                     setSearchTerm(user.name);
@@ -494,9 +494,9 @@ const EarningsDashboard = () => {
 
         {selectedUser && userPayments.length > 0 ? (
           <div className="w-full overflow-x-auto">
-            <table className="table-auto w-full border-collapse border border-gray-300">
+            <table className="table-auto w-full border-collapse border border-gray-300 text-gray-800">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-gray-100 text-indigo-800">
                   <th className="border border-gray-300 px-4 py-2 text-left">
                     ID
                   </th>
@@ -569,11 +569,14 @@ const EarningsDashboard = () => {
                     </td>
                     <td className="border border-gray-300 px-4 py-2">
                       {payment.ends_at
-                        ? new Date(payment.ends_at).toLocaleDateString("es-ES", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })
+                        ? new Date(payment.ends_at).toLocaleDateString(
+                            "es-ES",
+                            {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            }
+                          )
                         : "N/A"}
                     </td>
                   </tr>

@@ -305,7 +305,7 @@ export default function Navbar() {
                     onClick={() => navigateTo("/pricing")}
                     className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
                   >
-                    Precios
+                    Subscripción
                   </button>
                   {user.role === "admin" && (
                     <button
@@ -344,7 +344,7 @@ export default function Navbar() {
                     onClick={() => navigateTo("/pricing")}
                     className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 font-medium hover:bg-indigo-50 transition-colors duration-200"
                   >
-                    Precios
+                    Subscripción
                   </button>
                   <Link
                     href="/login"
