@@ -10,6 +10,10 @@ interface Payment {
   amount: number;
   plan_id: number;
   user_id?: number;
+  id?: number;
+  payment_method?: string;
+  starts_at?: string | number | Date;
+  ends_at?: string | number | Date;
 }
 
 interface User {
@@ -490,7 +494,92 @@ const EarningsDashboard = () => {
 
         {selectedUser && userPayments.length > 0 ? (
           <div className="w-full overflow-x-auto">
-            <svg ref={userChartRef} className="mx-auto"></svg>
+            <table className="table-auto w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    ID
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    Plan
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    Monto
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    Estado
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    Método de Pago
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    Fecha de Compra
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    Inicio del Plan
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    Fin del Plan
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {userPayments.map((payment) => (
+                  <tr key={payment.id} className="hover:bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2">
+                      {payment.id}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      {payment.plan_id === 1
+                        ? "Plan Básico"
+                        : payment.plan_id === 2
+                        ? "Plan Premium"
+                        : "Otro Plan"}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      ${payment.amount.toFixed(2)}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      {payment.status}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      {payment.payment_method}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      {new Date(payment.created_at).toLocaleDateString(
+                        "es-ES",
+                        {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        }
+                      )}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      {payment.starts_at
+                        ? new Date(payment.starts_at).toLocaleDateString(
+                            "es-ES",
+                            {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            }
+                          )
+                        : "N/A"}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      {payment.ends_at
+                        ? new Date(payment.ends_at).toLocaleDateString("es-ES", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })
+                        : "N/A"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         ) : (
           <div className="text-center py-8 text-gray-500">
