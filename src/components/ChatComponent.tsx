@@ -4,6 +4,7 @@ import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
+import Image from "next/image";
 
 // Definir el tipo User localmente
 type User = {
@@ -32,7 +33,6 @@ export default function ChatComponent() {
   const messageContainerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // Verificar si el usuario está autenticado y tiene acceso
   useEffect(() => {
     const checkUserAccess = async () => {
       try {
@@ -67,20 +67,17 @@ export default function ChatComponent() {
     checkUserAccess();
   }, [isOpen, messages.length]);
 
-  // Scroll al último mensaje cuando se añade uno nuevo
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
 
-  // Permitir que otros componentes abran el chat
   useEffect(() => {
     const handleChatButtonClick = () => {
       setIsOpen(true);
     };
 
-    // Escuchar clics en elementos con ID chat-button
     document.addEventListener("click", (e) => {
       const target = e.target as HTMLElement;
       if (target.id === "chat-button" || target.closest("#chat-button")) {
@@ -95,7 +92,6 @@ export default function ChatComponent() {
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
-    // Si se está cerrando el chat, también resetear el modo expandido
     if (isOpen) {
       setIsExpanded(false);
     }
@@ -109,7 +105,6 @@ export default function ChatComponent() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    // Verificar si el usuario tiene acceso
     if (!user) {
       setMessages((prev) => [
         ...prev,
@@ -205,7 +200,6 @@ export default function ChatComponent() {
     return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
-  // Verificar si el usuario tiene acceso para enviar mensajes
   const hasAccessToChat = user && user.has_access === true;
 
   return (
@@ -214,14 +208,25 @@ export default function ChatComponent() {
       <button
         ref={buttonRef}
         onClick={toggleChat}
-        className="fixed bottom-6 right-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 z-50 flex items-center justify-center"
+        className="fixed w-15 h-15 bottom-6 right-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 z-50 flex items-center justify-center"
         aria-label="Abrir chat"
       >
         {isOpen ? (
-          <span className="text-xl">✕</span>
+          <span className="rounded-full w-8 h-8 flex items-center justify-center">
+            X
+          </span>
         ) : (
           <div className="relative">
-            <span className="text-xl">💬</span>
+            <span className="text-xl">
+              <Image
+                src="/Bit&Brain.svg" // Ruta de la imagen
+                alt="Logo Bit&Brain"
+                width={48} // Ancho de la imagen
+                height={48} // Alto de la imagen
+                layout="intrinsic"
+                className="mr-2 rounded-full"
+              />
+            </span>
             {!isOpen && messages.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {messages.filter((m) => m.role === "bot").length}
@@ -233,11 +238,11 @@ export default function ChatComponent() {
 
       {/* Contenedor del Chat */}
       <div
-        className={`fixed z-40 transition-all duration-300 ease-in-out ${
+        className={`fixed mb-4 z-40 transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         } ${
           isExpanded
-            ? "bottom-0 right-0 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 h-screen pt-90"
+            ? "bottom-28 right-0 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 h-screen pt-90"
             : "bottom-20 right-6 w-[90%] max-w-[420px] sm:w-[420px]"
         }`}
       >
@@ -245,20 +250,29 @@ export default function ChatComponent() {
           {/* Encabezado del Chat */}
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 flex justify-between items-center">
             <div className="flex items-center space-x-2">
-              <div className="bg-white/20 p-2 rounded-full">
-                <span className="text-sm">💬</span>
+              <div className="bg-white/20 rounded-full">
+                <span className="relative rounded-full shadow-md">
+                  <Image
+                    src="/Bit&Brain.svg" // Ruta de la imagen
+                    alt="Logo Bit&Brain"
+                    width={48} // Ancho de la imagen
+                    height={48} // Alto de la imagen
+                    layout="intrinsic"
+                    className="rounded-full"
+                  />
+                </span>
               </div>
-              <span className="font-bold">Asistente Virtual</span>
+              <span className="font-bold">Asistente Bit&Brain</span>
             </div>
             <div className="flex items-center space-x-2">
-              <button
+              {/* <button
                 onClick={downloadChat}
                 className="text-white hover:bg-white/20 p-1.5 rounded-full transition-colors"
                 aria-label="Descargar conversación"
                 disabled={messages.length === 0}
               >
                 <span className="text-sm">📥</span>
-              </button>
+              </button> */}
               <button
                 onClick={toggleExpand}
                 className="text-white hover:bg-white/20 p-1.5 rounded-full transition-colors"
